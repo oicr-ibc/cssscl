@@ -32,13 +32,13 @@ Getting started:
 Tested environments 
 ====================
 
-Distributor ID: Debian/Ubuntu  
+``Distributor ID: Debian/Ubuntu``  
 
-Description: Debian GNU/Linux 8.1 (jessie) / Ubuntu 12.04.3 LTS   
+``Description: Debian GNU/Linux 8.1 (jessie) / Ubuntu 12.04.3 LTS``   
 
-Release: 8.1 64-bit / 12.04 64-bit  
+``Release: 8.1 64-bit / 12.04 64-bit``  
 
-Codename: jessie / precise  
+``Codename: jessie / precise``
 
 
 =================================
