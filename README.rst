@@ -91,9 +91,10 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
 1. Download the cssscl package
 
   .. code-block:: bash 
-
+   
+     # use wget 
      $ wget --no-check-certificate https://github.com/oicr-ibc/cssscl/archive/master.tar.gz
-     $ tar -zxvf master.tar.gz -C ./cssscl
+     $ tar -zxvf master.tar.gz; mv cssscl-master cssscl 
      # or use git clone  
      $ git clone git@github.com:oicr-ibc/cssscl.git
 
@@ -150,8 +151,9 @@ Install the cssscl package directly to your python global dist- or site-packages
    
    .. code-block:: bash 
 
+     # use wget 
      $ wget --no-check-certificate https://github.com/oicr-ibc/cssscl/archive/master.tar.gz
-     $ tar -zxvf master.tar.gz -C ./cssscl
+     $ tar -zxvf master.tar.gz; mv cssscl-master cssscl 
      # or use git clone  
      $ git clone git@github.com:oicr-ibc/cssscl.git
 
