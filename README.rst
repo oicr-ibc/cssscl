@@ -22,9 +22,32 @@ free to let us know.
     :depth: 1
     :backlinks: none
 
-============
-Dependencies
-============
+
+====================
+Tested environments 
+====================
+
+Distributor ID: Debian / Ubuntu
+Description:    Debian GNU/Linux 8.1 (jessie) / Ubuntu 12.04.3 LTS
+Release:        8.1 64-bit / 12.04 64-bit
+Codename:       jessie / precise
+
+
+=================================
+Dependencies on Debian and Ubuntu
+=================================
+
+- Python_ - Python 2.7.3+ supported. No support for Python 3 at the moment.
+
+In order to compile cssscl on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the following packages need to be installed:
+--------------------------------------------------------------------------------------------------------------------
+.. code-block:: bash
+
+   $ sudo apt-get update
+   $ sudo apt-get install build-essential python2.7 python2.7-dev g++ libxml2-dev libxslt-dev gfortran libopenblas-dev liblapack-dev
+
+Note: If you are testing cssscl using a VM please make sure that you have at least 1024 MB of RAM.
+
 
 ============
 Installation
