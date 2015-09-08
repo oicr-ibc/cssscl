@@ -31,17 +31,17 @@ Tested environments
 ====================
 
 
-| *Distributor ID: Debian/Ubuntu*
-| *Description: Debian GNU/Linux 8.1 (jessie) / Ubuntu 12.04.3 LTS*  
-| *Release: 8.1 64-bit / 12.04 64-bit*  
-| *Codename: jessie / precise*
+| Distributor ID: Debian/Ubuntu
+| Description: Debian GNU/Linux 8.1 (jessie) / Ubuntu 12.04.3 LTS 
+| Release: 8.1 64-bit / 12.04 64-bit 
+| Codename: jessie / precise
 
 
 =================================
 Dependencies on Debian and Ubuntu
 =================================
 
-- Python: Python 2.7.3+ supported. No support for Python 3 at the moment.
+Python: Python 2.7.3+ supported. No support for Python 3 at the moment.
 
 In order to compile cssscl on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the following packages need to be installed:
 
@@ -57,22 +57,22 @@ Note: If you are testing cssscl using a VM please make sure that you have at lea
 Installation
 ============
 
-If any of the following packages: **jellyfish**, **BLAST** or **plzip** are already INSTALLED on your system make sure that they are in your 
+Note: if any of the following packages: **jellyfish**, **BLAST** or **plzip** are already INSTALLED on your system make sure that they are in your 
 executable search path (i.e. PATH variable) (as shown in the examples below):
 
-- BLAST
+*BLAST*
 .. code-block:: bash
-  
+
    # e.g. PATH_TO_YOUR_BLAST=/home/user_x/blast/ncbi-blast-2.2.30+/bin
    $ export PATH=$PATH:PATH_TO_YOUR_BLAST 
 
-- jellyfish
+*jellyfish*
 .. code-block:: bash
 
    # e.g. PATH_TO_YOUR_jellyfish=/home/user_x/jellyfish-1.1.10/bin
    $ export PATH=$PATH:PATH_TO_YOUR_jellyfish 
  
-- plzip
+*plzip*
 .. code-block:: bash
 
    # e.g. PATH_TO_YOUR_plzip=/home/user_x/plzip-1.1/plzip
