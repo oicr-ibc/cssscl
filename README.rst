@@ -1,13 +1,13 @@
 CSSSCL: a taxonomic classifier for DNA sequences
 ======
 
-**Project Leader** Vincent Ferretti 
+**Project Leader** Vincent Ferretti
 **Author** Ivan Borozan 
 
 About:
 ======
 
-CSSSCL is a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short reads.
+**CSSSCL** is a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short reads.
 
 Downloading and using cssscl is free, if you use cssscl or its code in your work 
 please acknowledge cssscl by citing Borozan I, Watt S, Ferretti V. "Integrating 
@@ -19,7 +19,9 @@ free to let us know.
 
 Getting Started
 ---------------
-You will need a MongoDB and Python 2.7.3+. For more details, please read the INSTALL.rst.  
+You will need a Python 2.7.3+ and MongoDB. For more details, please read below:
+
+
 
 
 License and Copyright
