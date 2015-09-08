@@ -93,12 +93,15 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
   .. code-block:: bash 
 
      $ wget --no-check-certificate https://github.com/oicr-ibc/cssscl/archive/master.tar.gz
-     $ cd cssscl-master
+     $ tar -zxvf master.tar.gz -C ./cssscl
+     # or use git clone  
+     $ git clone git@github.com:oicr-ibc/cssscl.git
 
 2. Check that all packages necessary to run the cssscl are installed and are avaialble 
 
   .. code-block:: bash 
-
+    
+     $ cd cssscl
      $ ./cssscl_check_pre_installation.sh
 
 **Note:** Run the **cssscl_check_pre_installation.sh** script to check if all third party software is installed (namely pip, plzip, BLAST, jellyfish and mongoDB), the script will also install them if necessary. The script will also check if: python (and python-dev), libxml2-dev, libxslt-dev, gfortran, libopenblas-dev and liblapack-dev are installed. All the third party executables such as blastn, plzip and jellyfish will be installed in the cssscl-1.0/src/bin/ directory.  	     
@@ -121,7 +124,7 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
 
      $ sudo pip install .
     
-**Note:** this will install all the python modules necessary for running the cssscl package in the 'cssscl-1.0/csssclvenv/' directory. 
+**Note:** this will install all the python modules necessary for running the cssscl package in the 'cssscl-master/csssclvenv/' directory. 
 
 
 6. Configure mongodb
@@ -141,19 +144,22 @@ Accept all the values prompted by default by pressing [ENTER]
 
 **Option B**
     
-Install the cssscl package directly to your python global dist- or site-packages directory as shown below: (**CAUTION: some of the python packages on your system might be updated if required by the cssscl package**) 
+Install the cssscl package directly to your python global dist- or site-packages directory as shown below (**CAUTION: some of the python packages on your system might be updated if required by the cssscl package**):
             
 1. Download the cssscl package 
    
    .. code-block:: bash 
 
      $ wget --no-check-certificate https://github.com/oicr-ibc/cssscl/archive/master.tar.gz
-     $ cd cssscl-master
+     $ tar -zxvf master.tar.gz -C ./cssscl
+     # or use git clone  
+     $ git clone git@github.com:oicr-ibc/cssscl.git
 
 2. Check that all packages necessary to run the cssscl are installed and are avaialble 
 	      
    .. code-block:: bash 
 
+     $ cd cssscl
      $ ./cssscl_check_pre_installation.sh
 
 3. INSTALL cssscl   
