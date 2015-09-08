@@ -228,16 +228,8 @@ The additional optional arguments used above have the following meaning:
 ------------------------------------------------------------------------
 
      | -btax, --build_taxonomy_data
-     |                    Build (or rebuild) the taxonomy data (e.g. when
-     |                    initializing the database or updating the taxon
-     |                    information) (default = False)
-     | -c, --use_compression
-     |                    Build the compression db (default = False)
-     | -blast, --use_blast   Build the BLAST db (default = False)
-     | -nt NUMBER_THREADS, --number_threads NUMBER_THREADS
-     |                    Specify the number of threads to be used (default = 1
-     |                    CPU)
- 
+     |                      taxa
+
 
 For more information please consult the cssscl's build_dbs help page by typing:
 
