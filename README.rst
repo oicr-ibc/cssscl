@@ -85,9 +85,11 @@ executable search path (i.e. PATH variable) (as shown in the examples below):
 To install the cssscl package you now have two options:
 -------------------------------------------------------
 
-1. Install the cssscl package using the **Python's Virtual Environment** tool to keep the dependencies required by the cssscl package in a separate directory and to keep your global python dist- or site-packages directory clean and manageable.
+**Option A**
 
-  i. Download the cssscl package
+Install the cssscl package using the **Python's Virtual Environment** tool to keep the dependencies required by the cssscl package in a separate directory and to keep your global python dist- or site-packages directory clean and manageable.
+
+1. Download the cssscl package
 
   .. code-block:: bash 
 
@@ -95,7 +97,7 @@ To install the cssscl package you now have two options:
      $ tar -zxvf cssscl-1.0.tar.gz
      $ cd cssscl-1.0
 
-  ii. Check that all packages necessary to run the cssscl are installed and are avaialble 
+2. Check that all packages necessary to run the cssscl are installed and are avaialble 
 
   .. code-block:: bash 
 
@@ -103,19 +105,19 @@ To install the cssscl package you now have two options:
 
 Note: Run the 'cssscl_check_pre_installation.sh' script to check if all third party software is installed (namely pip, plzip, BLAST, jellyfish and mongoDB), the script will also install them if necessary. The script will also check if: python (and python-dev), libxml2-dev, libxslt-dev, gfortran, libopenblas-dev and liblapack-dev are installed. All the third party executables such as blastn, plzip and jellyfish will be installed in the cssscl-1.0/src/bin/ directory.  	     
 
-  iii. Create a virtual environment for the cssscl program (e.g. name it 'csssclvenv')
+3. Create a virtual environment for the cssscl program (e.g. name it 'csssclvenv')
 
   .. code-block:: bash 
  
     $ virtualenv csssclvenv
 
-  iv. To begin using the virtual environment, it first needs to be activated:
+4. To begin using the virtual environment, it first needs to be activated:
 
   .. code-block:: bash 
 
      $ source csssclvenv/bin/activate
 
-  v. INSTALL cssscl as root 
+5. INSTALL cssscl as root 
 
   .. code-block:: bash 
 
@@ -123,7 +125,7 @@ Note: Run the 'cssscl_check_pre_installation.sh' script to check if all third pa
     
 Note:this will install all the python modules necessary for running the cssscl package in the 'cssscl-1.0/csssclvenv/' directory. 
 
-  vi. If you are done working in the virtual environment for the moment, you can deactivate it:
+6. If you are done working in the virtual environment for the moment, you can deactivate it:
 
   .. code-block:: bash 
 
