@@ -37,10 +37,10 @@ Codename:       jessie / precise
 Dependencies on Debian and Ubuntu
 =================================
 
-- Python_ - Python 2.7.3+ supported. No support for Python 3 at the moment.
+- Python - Python 2.7.3+ supported. No support for Python 3 at the moment.
 
 In order to compile cssscl on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the following packages need to be installed:
---------------------------------------------------------------------------------------------------------------------
+
 .. code-block:: bash
 
    $ sudo apt-get update
