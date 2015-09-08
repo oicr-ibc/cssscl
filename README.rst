@@ -58,34 +58,30 @@ Note: If you are testing cssscl using a VM please make sure that you have at lea
 Installation
 ============
 
-If any of the following packages (jellyfish, BLAST or plzip) are already INSTALLED on your system make sure that they are in your 
+If any of the following packages: jellyfish, BLAST or plzip are already INSTALLED on your system make sure that they are in your 
 executable search path (i.e. PATH variable) (as shown in the examples below):
 
 - BLAST
 .. code-block:: bash
-
+  
+   # e.g. PATH_TO_YOUR_BLAST=/home/user_x/blast/ncbi-blast-2.2.30+/bin
    $ export PATH=$PATH:PATH_TO_YOUR_BLAST 
-
-(e.g. export PATH=$PATH:/home/user_x/blast/ncbi-blast-2.2.30+/bin )
 
 - jellyfish
 .. code-block:: bash
 
+   # e.g. PATH_TO_YOUR_jellyfish=/home/user_x/jellyfish-1.1.10/bin
    $ export PATH=$PATH:PATH_TO_YOUR_jellyfish 
  
-(e.g. export PATH=$PATH:/home/user_x/jellyfish-1.1.10/bin )
-
 - plzip
 .. code-block:: bash
 
-   $ export PATH=$PATH:PATH_TO_YOUR_plzip/plzip-1.1/plzip 
-
-(e.g. export PATH=$PATH:/home/user_x/plzip-1.1/plzip )
+   # e.g. PATH_TO_YOUR_plzip=/home/user_x/plzip-1.1/plzip
+   $ export PATH=$PATH:PATH_TO_YOUR_plzip
 
 To install the cssscl package you now have two options:
 
-1. Install the cssscl package using the Python's Virtual Environment tool to keep the dependencies required by the cssscl package 
-     in a separate directory and to keep your global python dist- or site-packages directory clean and manageable.
+1. Install the cssscl package using the Python's Virtual Environment tool to keep the dependencies required by the cssscl package in a separate directory and to keep your global python dist- or site-packages directory clean and manageable.
  * Download the cssscl package
  .. code-block:: bash 
      $ wget --no-check-certificate https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/code/cssscl-1.0.tar.gz
