@@ -47,8 +47,8 @@ In order to compile cssscl on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the foll
 
 .. code-block:: bash
 
-   $ sudo apt-get update
-   $ sudo apt-get install build-essential python2.7 python2.7-dev g++ libxml2-dev libxslt-dev gfortran libopenblas-dev liblapack-dev
+     $ sudo apt-get update
+     $ sudo apt-get install build-essential python2.7 python2.7-dev g++ libxml2-dev libxslt-dev gfortran libopenblas-dev liblapack-dev
 
 Note: If you are testing cssscl using a VM please make sure that you have at least 1024 MB of RAM.
 
@@ -63,25 +63,25 @@ Installation
 
 .. code-block:: bash
 
-   # e.g. PATH_TO_YOUR_BLAST=/home/user_x/blast/ncbi-blast-2.2.30+/bin
-   $ export PATH=$PATH:PATH_TO_YOUR_BLAST 
+     # e.g. PATH_TO_YOUR_BLAST=/home/user_x/blast/ncbi-blast-2.2.30+/bin
+     $ export PATH=$PATH:PATH_TO_YOUR_BLAST 
 
 *jellyfish*
 
 .. code-block:: bash
 
-   # e.g. PATH_TO_YOUR_jellyfish=/home/user_x/jellyfish-1.1.10/bin
-   $ export PATH=$PATH:PATH_TO_YOUR_jellyfish 
+     # e.g. PATH_TO_YOUR_jellyfish=/home/user_x/jellyfish-1.1.10/bin
+     $ export PATH=$PATH:PATH_TO_YOUR_jellyfish 
  
 *plzip*
 
 .. code-block:: bash
 
-   # e.g. PATH_TO_YOUR_plzip=/home/user_x/plzip-1.1/plzip
-   $ export PATH=$PATH:PATH_TO_YOUR_plzip
+     # e.g. PATH_TO_YOUR_plzip=/home/user_x/plzip-1.1/plzip
+     $ export PATH=$PATH:PATH_TO_YOUR_plzip
 
 
-To install the cssscl package you now have two options:
+To install the cssscl package you have two options:
 -------------------------------------------------------
 
 **Option A**
@@ -107,7 +107,7 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
 
   .. code-block:: bash 
  
-    $ virtualenv csssclvenv
+     $ virtualenv csssclvenv
 
 4. To begin using the virtual environment, it first needs to be activated:
 
@@ -147,27 +147,27 @@ Install the cssscl package directly to your python global dist- or site-packages
    
    .. code-block:: bash 
 
-       $ tar -zxvf cssscl-1.0.tar.gz
-       $ cd cssscl-1.0
+     $ tar -zxvf cssscl-1.0.tar.gz
+     $ cd cssscl-1.0
 
 2. Check that all packages necessary to run the cssscl are installed and are avaialble 
 	      
    .. code-block:: bash 
 
-       $ ./cssscl_check_pre_installation.sh
+     $ ./cssscl_check_pre_installation.sh
 
 3. INSTALL cssscl   
 
    .. code-block:: 
    
-       $ sudo pip install .        
+     $ sudo pip install .        
 
 
 4. Configure mongodb
 
  .. code-block:: bash 
 
-      $ cssscl configure 
+     $ cssscl configure 
 
 Accept all the values prompted by default by pressing [ENTER]  
 
@@ -182,6 +182,7 @@ Uninstall cssscl
 
      $ cd cssscl-1.0/
      $ ./cssscl_uninstall.sh 
+
 
 =====
 Usage
@@ -211,19 +212,19 @@ Download test/train data:
 
  .. code-block:: bash 
     
-      $ cssscl build_dbs -btax -c -blast -nt 2 PATH_TO/test_data/TRAIN.fa PATH_TO/taxon/
+     $ cssscl build_dbs -btax -c -blast -nt 2 PATH_TO/test_data/TRAIN.fa PATH_TO/taxon/
 
 By default all databases will be outputted to the DIR where the TRAIN.fa resides (note that all paths provided in the examples above are using absolute/full paths to the files/directories). The above command will build three databases (blast, compression and kmer dbs) for sequences in the training set.
 
 The cssscl's ``build_dbs`` module requires two positional arguments to be provided: 
 
 
-     |1. a file in the fasta format (e.g. TRAIN.fa as in the example above) that specifies the collection of reference genomes composing the training set.
-     |2. a directory (taxon/ in the example above) that specifies the location where the taxon data is stored (more specifically the directory should contain the following files: gi_taxid_nucl.dmp, names.dmp and nodes.dmp, these files can be downloaded from the NCBI taxonomy database at ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/).
+     | 1. a file in the fasta format (e.g. TRAIN.fa as in the example above) that specifies the collection of reference genomes composing the training set.
+     | 2. a directory (taxon/ in the example above) that specifies the location where the taxon data is stored (more specifically the directory should contain the following files: gi_taxid_nucl.dmp, names.dmp and nodes.dmp, these files can be downloaded from the NCBI taxonomy database at ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/).
 
 
-     |The additional optional arguments used above have the following meaning:
-     |------------------------------------------------------------------------
+     | The additional optional arguments used above have the following meaning:
+     | ------------------------------------------------------------------------
      |
      | -btax, --build_taxonomy_data
      |                    Build (or rebuild) the taxonomy data (e.g. when
