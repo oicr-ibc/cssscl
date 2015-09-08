@@ -227,8 +227,8 @@ The cssscl's ``build_dbs`` module requires two positional arguments to be provid
 The additional optional arguments used above have the following meaning:
 ------------------------------------------------------------------------
 
-     | -btax, --build_taxonomy_data
-     |            taxa
+| -btax, --build_taxonomy_data
+|            taxa
 
 
 For more information please consult the cssscl's build_dbs help page by typing:
