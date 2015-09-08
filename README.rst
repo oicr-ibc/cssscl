@@ -62,12 +62,14 @@ If any of the following packages (jellyfish, BLAST or plzip) are already INSTALL
 executable search path (i.e. PATH variable) (as shown in the examples below):
 
 - BLAST
+
 .. code-block:: bash
      $ export PATH=$PATH:PATH_TO_YOUR_BLAST 
 
 (e.g. export PATH=$PATH:/home/user_x/blast/ncbi-blast-2.2.30+/bin )
 
 - jellyfish
+
 .. code-block:: bash
      # jellyfish
      $ export PATH=$PATH:PATH_TO_YOUR_jellyfish 
@@ -75,6 +77,7 @@ executable search path (i.e. PATH variable) (as shown in the examples below):
 (e.g. export PATH=$PATH:/home/user_x/jellyfish-1.1.10/bin )
 
 - plzip
+
 .. code-block:: bash
      $ export PATH=$PATH:PATH_TO_YOUR_plzip/plzip-1.1/plzip 
 
