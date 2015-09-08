@@ -32,10 +32,10 @@ Getting started:
 Tested environments 
 ====================
 
-Distributor ID: Debian / Ubuntu <br />
-Description: Debian GNU/Linux 8.1 (jessie) / Ubuntu 12.04.3 LTS <br /> 
-Release: 8.1 64-bit / 12.04 64-bit  <br />
-Codename: jessie / precise <br />
+Distributor ID: Debian / Ubuntu__
+Description: Debian GNU/Linux 8.1 (jessie) / Ubuntu 12.04.3 LTS__ 
+Release: 8.1 64-bit / 12.04 64-bit__
+Codename: jessie / precise__
 
 
 =================================
