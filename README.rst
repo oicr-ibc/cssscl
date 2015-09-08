@@ -86,7 +86,7 @@ To install the cssscl package you have two options:
 
 **Option A**
 
-Install the cssscl package using the **Python's Virtual Environment** tool to keep the dependencies required by the cssscl package in a separate directory and to keep your global python dist- or site-packages directory clean and manageable.
+Install the cssscl package using the **Python's Virtual Environment** tool to keep the dependencies required by the cssscl package in a separate directory and to keep your global python dist- or site-packages directory clean and manageable as shown below:
 
 1. Download the cssscl package
 
@@ -101,7 +101,7 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
 
      $ ./cssscl_check_pre_installation.sh
 
-**Note:** Run the 'cssscl_check_pre_installation.sh' script to check if all third party software is installed (namely pip, plzip, BLAST, jellyfish and mongoDB), the script will also install them if necessary. The script will also check if: python (and python-dev), libxml2-dev, libxslt-dev, gfortran, libopenblas-dev and liblapack-dev are installed. All the third party executables such as blastn, plzip and jellyfish will be installed in the cssscl-1.0/src/bin/ directory.  	     
+**Note:** Run the **cssscl_check_pre_installation.sh** script to check if all third party software is installed (namely pip, plzip, BLAST, jellyfish and mongoDB), the script will also install them if necessary. The script will also check if: python (and python-dev), libxml2-dev, libxslt-dev, gfortran, libopenblas-dev and liblapack-dev are installed. All the third party executables such as blastn, plzip and jellyfish will be installed in the cssscl-1.0/src/bin/ directory.  	     
 
 3. Create a virtual environment for the cssscl program (e.g. name it 'csssclvenv')
 
@@ -121,7 +121,7 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
 
      $ sudo pip install .
     
-Note: this will install all the python modules necessary for running the cssscl package in the 'cssscl-1.0/csssclvenv/' directory. 
+**Note:** this will install all the python modules necessary for running the cssscl package in the 'cssscl-1.0/csssclvenv/' directory. 
 
 
 6. Configure mongodb
@@ -141,14 +141,14 @@ Accept all the values prompted by default by pressing [ENTER]
 
 **Option B**
     
-Install the cssscl package directly to your python global dist- or site-packages directory (**CAUTION: some of the python packages on your system might be updated if required by the cssscl package**) 
+Install the cssscl package directly to your python global dist- or site-packages directory as shown below: (**CAUTION: some of the python packages on your system might be updated if required by the cssscl package**) 
             
 1. Download the cssscl package 
    
    .. code-block:: bash 
 
      $ wget --no-check-certificate https://github.com/oicr-ibc/cssscl/archive/master.tar.gz
-     $ cd cssscl-1.0
+     $ cd cssscl-master
 
 2. Check that all packages necessary to run the cssscl are installed and are avaialble 
 	      
@@ -176,11 +176,11 @@ Accept all the values prompted by default by pressing [ENTER]
 Uninstall cssscl 
 =================
 
-**Note:** this will only work if you installed cssscl with the cmd 'sudo pip install .' as shown above.
+**Note:** this will only work if you installed cssscl with the cmd 'sudo pip install .' as shown in the Installation section above. 
           
  .. code-block:: bash 
 
-     $ cd cssscl-1.0/
+     $ cd cssscl-master/
      $ ./cssscl_uninstall.sh 
 
 
@@ -207,8 +207,6 @@ Download test/train data:
 
 
 **To run the cssscl classifier**
-
-**Note**: For the test set data provided above the values of the parameters used in the model have already been optimized and are included as part of the test set data (see the optimum_kmer directory in the test_set/ directory provided). Thus for the test dataset the optimization is not required to be performed prior to running the classifier. On how to run the classifier by performing the optimization stage first please see the step 3 below. 
 
 **1. Build the necessary databases from the training set:**
 
@@ -244,7 +242,7 @@ The additional optional arguments used in the command line above have the follow
                          CPU)
 
 
-For more information please consult the cssscl's build_dbs help page by typing:
+For more information please consult the cssscl's ``build_dbs`` help page by typing:
 
  .. code-block:: bash 
 
@@ -253,22 +251,24 @@ For more information please consult the cssscl's build_dbs help page by typing:
 
 **2. Perform the classification using the test set:**
 
+**Note**: For the test set data provided above the values of the parameters used in the model have already been optimized and are included as part of the test set data (see the optimum_kmer directory in the test_set/ directory provided). Thus for the test dataset the optimization is not required to be performed prior to running the classifier. On how to run the classifier by performing the optimization stage first please see the step 3 below. 
+
  .. code-block:: bash 
 
       $ cssscl classify -c -blast blastn -tax genus -nt 2 PATH_TO/test_data/test/TEST.fa PATH_TO/test_data/
  
 (the whole process should take ~ 29 min using 2 CPUs)
 
-Note that in the above example the output file 'cssscl_results_genus.txt' with classification results will be located in the directory where the TEST.fa resides. 
+Note that in the above example the output file ``cssscl_results_genus.txt`` with classification results will be located in the directory where the TEST.fa resides. 
 
-The cssscl's classify module requires two positional arguments to be provided: 
+The cssscl's ``classify`` module requires two positional arguments to be provided: 
 
       | 1. a test data with sequences in the FASTA format for classification (e.g. TEST.fa as in the example above)
       |
       | 2. a directory where the databases (built using the training set) reside
 
 
-This will run the classifier with all the similarity measures (including the compression and the blast measure) described in:  Borozan I, Watt S, Ferretti V. *"Integrating alignment-based and alignment-free sequence similarity measures for biological sequence classification."*  Bioinformatics. 2015 Jan 7. pii: btv006.
+This will run the classifier with all the similarity measures (including the compression and the blast measure) described in:  Borozan I, Watt S, Ferretti V. "*Integrating alignment-based and alignment-free sequence similarity measures for biological sequence classification.*"  Bioinformatics. 2015 Jan 7. pii: btv006.
 
 The additional optional arguments used above have the following meaning:
 
@@ -286,16 +286,17 @@ The additional optional arguments used above have the following meaning:
       |                    Specify the number of threads to be used (default = 1)
 
 
-For more information please consult the cssscl's classify help page by typing 
+For more information please consult the cssscl's ``classify`` help page by typing 
 
  .. code-block:: bash 
 
       $ cssscl classify --help 
 
-**Note:** Prior to performing the classification the module finds optimum values for its parameters (such as the optimum k-mer size and removes sequence similarity measures with the low predictive power (Borozan et al., Bioinformatics. 2015 Jan 7. pii: btv006) based on the information obtained from the sequences in the training set, and provides an estimate of the overall accuracy with which sequences are to be classified using a leave-one-out cross-validation procedure. 
-
 
 **3. Perform the classification by optimizing the cssscl's parameter values first:**
+
+**Note:** Prior to performing the classification the module finds optimum values for its parameters (such as the optimum k-mer size and removes sequence similarity measures with the low predictive power (Borozan et al., Bioinformatics. 2015 Jan 7. pii: btv006) based on the information obtained from the sequences in the training set, and provides an estimate of the overall accuracy with which sequences are to be classified using a leave-one-out cross-validation procedure. 
+
 
  .. code-block:: bash 
 
