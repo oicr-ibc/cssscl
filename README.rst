@@ -214,10 +214,9 @@ Download test/train data:
     
      $ cssscl build_dbs -btax -c -blast -nt 2 PATH_TO/test_data/TRAIN.fa PATH_TO/taxon/
 
-By default all databases will be outputted to the DIR where the TRAIN.fa resides (note that all paths provided in the examples above are using absolute/full paths to the files/directories). The above command will build three databases (blast, compression and kmer dbs) for sequences in the training set.
+By default all databases will be outputted to the DIR where the TRAIN.fa resides (note that all paths provided in the examples above are using absolute/full paths to the files/directories). The above command will build three databases (blast, compression and the kmer db) for sequences in the training set.
 
 The cssscl's ``build_dbs`` module requires two positional arguments to be provided: 
-
 
      | 1. a file in the fasta format (e.g. TRAIN.fa as in the example above) that specifies the collection of reference genomes composing the training set.
      |
@@ -225,10 +224,10 @@ The cssscl's ``build_dbs`` module requires two positional arguments to be provid
 
 
 The additional optional arguments used above have the following meaning:
-------------------------------------------------------------------------
+
 
 | -btax, --build_taxonomy_data
-|            taxa
+|        taxa
 
 
 For more information please consult the cssscl's build_dbs help page by typing:
