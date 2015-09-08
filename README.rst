@@ -57,8 +57,7 @@ Note: If you are testing cssscl using a VM please make sure that you have at lea
 Installation
 ============
 
-Note: if any of the following packages: **jellyfish**, **BLAST** or **plzip** are already INSTALLED on your system make sure that they are in your 
-executable search path (i.e. PATH variable) (as shown in the examples below):
+**Note:** if any of the following packages: **jellyfish**, **BLAST** or **plzip** are already INSTALLED on your system make sure that they are in your executable search path (i.e. PATH variable) (as shown in the examples below):
 
 *BLAST*
 
@@ -93,7 +92,6 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
 
   .. code-block:: bash 
 
-     $ wget --no-check-certificate https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/code/cssscl-1.0.tar.gz
      $ tar -zxvf cssscl-1.0.tar.gz
      $ cd cssscl-1.0
 
@@ -123,20 +121,139 @@ Note: Run the 'cssscl_check_pre_installation.sh' script to check if all third pa
 
      $ sudo pip install .
     
-Note:this will install all the python modules necessary for running the cssscl package in the 'cssscl-1.0/csssclvenv/' directory. 
+Note: this will install all the python modules necessary for running the cssscl package in the 'cssscl-1.0/csssclvenv/' directory. 
 
-6. If you are done working in the virtual environment for the moment, you can deactivate it:
+
+6. Configure mongodb
+
+ .. code-block:: bash 
+
+     $ cssscl configure 
+    
+Accept all the values prompted by default by pressing [ENTER]  
+
+7. If you are done working in the virtual environment for the moment, you can deactivate it:
 
   .. code-block:: bash 
 
      $ deactivate
 
 
+**Option B**
+    
+Install the cssscl package directly to your python global dist- or site-packages directory (CAUTION: some of the python packages on  your system might be updated if required by the cssscl package) 
+            
+1. Download the cssscl package 
+   
+   .. code-block:: bash 
 
+   $ tar -zxvf cssscl-1.0.tar.gz
+   $ cd cssscl-1.0
+
+2. Check that all packages necessary to run the cssscl are installed and are avaialble 
+	      
+   .. code-block:: bash 
+
+   $ ./cssscl_check_pre_installation.sh
+
+3. INSTALL cssscl   
+
+   .. code-block:: 
+   
+   $ sudo pip install .        
+
+
+4. Configure mongodb
+
+ .. code-block:: bash 
+
+     $ cssscl configure 
+
+Accept all the values prompted by default by pressing [ENTER]  
+
+
+=================
+Uninstall cssscl 
+=================
+
+**Note:** this will only work if you installed cssscl with the cmd 'sudo pip install .' as shown above.
+          
+ .. code-block:: bash 
+
+     $ cd cssscl-1.0/
+     $ ./cssscl_uninstall.sh 
 
 =====
 Usage
 =====
+
+To test the classifier we have provided taxon and test data for you to download, as shown from the links provided below:
+------------------------------------------------------------------------------------------------------------------------
+
+Download taxon data:
+
+ .. code-block:: bash 
+
+     $ wget --no-check-certificate https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/taxon.tar.gz
+     $ tar -zxvf taxon.tar.gz
+    
+
+Download test/train data:
+
+ .. code-block:: bash 
+
+     $ wget --no-check-certificate https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/test_data.tar.gz
+     $ tar -zxvf test_data.tar.gz
+
+
+Run the cssscl classifier
+
+1. First build the necessary databases from the training set.
+
+By default all databases will be outputted to the DIR where the TRAIN.fa resides :
+
+(Note that all paths provided in the examples below are using absolute/full paths to the files/directories).
+ 
+ .. code-block:: bash 
+    
+      $ cssscl build_dbs -btax -c -blast -nt 2 PATH_TO/test_data/TRAIN.fa PATH_TO/taxon/
+
+(the whole process should take ~ 37 min using 2 CPUs)
+
+This will build three databases for sequences in the training set: 
+
+     |1. blast db
+     |2. compression db
+     |3. kmer count db 
+
+
+The cssscl's build_dbs module requires two positional arguments to be provided: 
+
+     |1. a file in the fasta format (e.g. TRAIN.fa as in the example above) that specifies the collection of reference genomes composing the training set.
+     |2. a directory (taxon/ in the example above) that specifies the location where the taxon data is stored (more specifically the directory should contain the following files: gi_taxid_nucl.dmp, names.dmp and nodes.dmp, these files can be downloaded from the NCBI taxonomy database at ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/).
+
+     |The additional optional arguments used above have the following meaning:
+     |------------------------------------------------------------------------
+     |
+     | -btax, --build_taxonomy_data
+     |                    Build (or rebuild) the taxonomy data (e.g. when
+     |                    initializing the database or updating the taxon
+     |                    information) (default = False)
+     | -c, --use_compression
+     |                    Build the compression db (default = False)
+     | -blast, --use_blast   Build the BLAST db (default = False)
+     | -nt NUMBER_THREADS, --number_threads NUMBER_THREADS
+     |                    Specify the number of threads to be used (default = 1
+     |                    CPU)
+ 
+
+For more information please consult the cssscl's build_dbs help page by typing:
+
+ .. code-block:: bash 
+
+     $ cssscl build_dbs --help
+
+
 
 =====================
 License and Copyright
