@@ -228,7 +228,7 @@ The additional optional arguments used above have the following meaning:
 ------------------------------------------------------------------------
 
      | -btax, --build_taxonomy_data
-     |                      taxa
+     |            taxa
 
 
 For more information please consult the cssscl's build_dbs help page by typing:
