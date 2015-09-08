@@ -11,7 +11,7 @@ About:
 
 **CSSSCL** is a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short reads.
 
-Downloading and using cssscl is free, if you use cssscl or its code in your work please acknowledge cssscl by citing Borozan I, Ferretti V. *CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads. Bioinformatics 2015.*
+Downloading and using cssscl is free, if you use cssscl or its code in your work please acknowledge cssscl by citing Borozan I, Ferretti V. "*CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads. Bioinformatics 2015.*"
 
 This is important for us since obtaining grants is one significant way to fund planning and implementation for our project. Also if you find cssscl useful in your research feel free to let us know.  
 
@@ -82,21 +82,20 @@ executable search path (i.e. PATH variable) (as shown in the examples below):
    $ export PATH=$PATH:PATH_TO_YOUR_plzip
 
 To install the cssscl package you now have two options:
+-------------------------------------------------------
 
 1. **Install the cssscl package using the Python's Virtual Environment tool to keep the dependencies required by the cssscl package in a separate directory and to keep your global python dist- or site-packages directory clean and manageable.**
 
- * Download the cssscl package
-
  .. code-block:: bash 
 
+     # Download the cssscl package
      $ wget --no-check-certificate https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/code/cssscl-1.0.tar.gz
      $ tar -zxvf cssscl-1.0.tar.gz
      $ cd cssscl-1.0
 
- * CHECK THAT ALL PACKAGES NECESSARY TO RUN THE cssscl ARE INSTALLED AND ARE AVAILABLE
-
  .. code-block:: bash 
 
+     # CHECK THAT ALL PACKAGES NECESSARY TO RUN THE cssscl ARE INSTALLED AND ARE AVAILABLE
      $ ./cssscl_check_pre_installation.sh
 
      Note: Run the 'cssscl_check_pre_installation.sh' script to check if all third party software is installed (namely pip, plzip,
