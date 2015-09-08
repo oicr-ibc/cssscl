@@ -92,8 +92,8 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
 
   .. code-block:: bash 
 
-     $ tar -zxvf cssscl-1.0.tar.gz
-     $ cd cssscl-1.0
+     $ wget --no-check-certificate https://github.com/oicr-ibc/cssscl/archive/master.tar.gz
+     $ cd cssscl-master
 
 2. Check that all packages necessary to run the cssscl are installed and are avaialble 
 
@@ -147,7 +147,7 @@ Install the cssscl package directly to your python global dist- or site-packages
    
    .. code-block:: bash 
 
-     $ tar -zxvf cssscl-1.0.tar.gz
+     $ wget --no-check-certificate https://github.com/oicr-ibc/cssscl/archive/master.tar.gz
      $ cd cssscl-1.0
 
 2. Check that all packages necessary to run the cssscl are installed and are avaialble 
@@ -286,7 +286,7 @@ The additional optional arguments used above have the following meaning:
       |                    Specify the number of threads to be used (default = 1)
 
 
-    For more information please consult the cssscl's classify help page by typing 
+For more information please consult the cssscl's classify help page by typing 
 
  .. code-block:: bash 
 
@@ -330,15 +330,15 @@ the number of sequences in the training and test sets. Thus the compression meas
 databases (e.g. viruses) and/or with smaller datasets (i.e. smaller number of reads/contigs to classify).
 
 
-===============================================================================
-Non-automated installation of third party software necessary for running cssscl
-===============================================================================
-In case the cssscl_check_pre_installation.sh script (see Installation above) fails please read the info below for the installation of individual third party software:
+===================================================================================
+Non-automated installation of third party software necessary for running the cssscl
+===================================================================================
+In case the **cssscl_check_pre_installation.sh** script (see Installation above) fails please read the info below for the installation of individual third party software:
 
 Necessary Python modules: 
 
 - BioPython_ - Tools for biological computation.
-- PyMongo_ - Python module needed for working with MongoDB (PyMongo < 3.0)
+- PyMongo_ - Python module needed for working with MongoDB (PyMongo = 2.8)
 - Sklearn_ - Machine Learning in Python
 - Numpy_ - NumPy is the fundamental package for scientific computing with Python
 - Cython_ - Cython is an optimising static compiler for both the Python programming language and the extended Cython programming language (based on Pyrex)
@@ -346,11 +346,11 @@ Necessary Python modules:
 
 .. _Python: http://www.python.org
 .. _BioPython: http://biopython.org/wiki/Main_Page
-.. _PyMongo: http://api.mongodb.org/python/current/
+.. _PyMongo: http://api.mongodb.org/python/2.8/
 .. _Sklearn: http://scikit-learn.org/stable/
 .. _Numpy: http://www.numpy.org/
 .. _Cython: http://cython.org/
-.. _SciPy_: http://www.scipy.org/
+.. _SciPy: http://www.scipy.org/
 
 
 **Installing python modules using pip manually:**
