@@ -85,9 +85,9 @@ executable search path (i.e. PATH variable) (as shown in the examples below):
 To install the cssscl package you now have two options:
 -------------------------------------------------------
 
-1. Install the cssscl package using the **Python's Virtual Environment** tool to keep the dependencies required by the cssscl package in a separate directory and to keep your global python dist- or site-packages directory clean and manageable.**
+1. Install the cssscl package using the **Python's Virtual Environment** tool to keep the dependencies required by the cssscl package in a separate directory and to keep your global python dist- or site-packages directory clean and manageable.
 
-Download the cssscl package
+⋅⋅1. Download the cssscl package
 
  .. code-block:: bash 
 
