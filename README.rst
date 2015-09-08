@@ -61,18 +61,21 @@ Note: if any of the following packages: **jellyfish**, **BLAST** or **plzip** ar
 executable search path (i.e. PATH variable) (as shown in the examples below):
 
 *BLAST*
+
 .. code-block:: bash
 
    # e.g. PATH_TO_YOUR_BLAST=/home/user_x/blast/ncbi-blast-2.2.30+/bin
    $ export PATH=$PATH:PATH_TO_YOUR_BLAST 
 
 *jellyfish*
+
 .. code-block:: bash
 
    # e.g. PATH_TO_YOUR_jellyfish=/home/user_x/jellyfish-1.1.10/bin
    $ export PATH=$PATH:PATH_TO_YOUR_jellyfish 
  
 *plzip*
+
 .. code-block:: bash
 
    # e.g. PATH_TO_YOUR_plzip=/home/user_x/plzip-1.1/plzip
