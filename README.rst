@@ -83,15 +83,22 @@ executable search path (i.e. PATH variable) (as shown in the examples below):
 
 To install the cssscl package you now have two options:
 
-1. Install the cssscl package using the Python's Virtual Environment tool to keep the dependencies required by the cssscl package in a separate directory and to keep your global python dist- or site-packages directory clean and manageable.
+1. **Install the cssscl package using the Python's Virtual Environment tool to keep the dependencies required by the cssscl package in a separate directory and to keep your global python dist- or site-packages directory clean and manageable.**
+
  * Download the cssscl package
+
  .. code-block:: bash 
+
      $ wget --no-check-certificate https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/code/cssscl-1.0.tar.gz
      $ tar -zxvf cssscl-1.0.tar.gz
      $ cd cssscl-1.0
+
  * CHECK THAT ALL PACKAGES NECESSARY TO RUN THE cssscl ARE INSTALLED AND ARE AVAILABLE
+
  .. code-block:: bash 
+
      $ ./cssscl_check_pre_installation.sh
+
      Note: Run the 'cssscl_check_pre_installation.sh' script to check if all third party software is installed (namely pip, plzip,
      BLAST, jellyfish and mongoDB), the script will also install them if necessary. The script will also check if: python (and  
      python-dev), libxml2-dev, libxslt-dev, gfortran, libopenblas-dev and liblapack-dev are installed. 
