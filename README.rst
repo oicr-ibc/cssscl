@@ -220,12 +220,13 @@ The cssscl's ``build_dbs`` module requires two positional arguments to be provid
 
 
      | 1. a file in the fasta format (e.g. TRAIN.fa as in the example above) that specifies the collection of reference genomes composing the training set.
+     |
      | 2. a directory (taxon/ in the example above) that specifies the location where the taxon data is stored (more specifically the directory should contain the following files: gi_taxid_nucl.dmp, names.dmp and nodes.dmp, these files can be downloaded from the NCBI taxonomy database at ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/).
 
 
-     | The additional optional arguments used above have the following meaning:
-     | ------------------------------------------------------------------------
-     |
+The additional optional arguments used above have the following meaning:
+------------------------------------------------------------------------
+
      | -btax, --build_taxonomy_data
      |                    Build (or rebuild) the taxonomy data (e.g. when
      |                    initializing the database or updating the taxon
