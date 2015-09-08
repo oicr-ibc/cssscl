@@ -101,7 +101,7 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
 
      $ ./cssscl_check_pre_installation.sh
 
-Note: Run the 'cssscl_check_pre_installation.sh' script to check if all third party software is installed (namely pip, plzip, BLAST, jellyfish and mongoDB), the script will also install them if necessary. The script will also check if: python (and python-dev), libxml2-dev, libxslt-dev, gfortran, libopenblas-dev and liblapack-dev are installed. All the third party executables such as blastn, plzip and jellyfish will be installed in the cssscl-1.0/src/bin/ directory.  	     
+**Note:** Run the 'cssscl_check_pre_installation.sh' script to check if all third party software is installed (namely pip, plzip, BLAST, jellyfish and mongoDB), the script will also install them if necessary. The script will also check if: python (and python-dev), libxml2-dev, libxslt-dev, gfortran, libopenblas-dev and liblapack-dev are installed. All the third party executables such as blastn, plzip and jellyfish will be installed in the cssscl-1.0/src/bin/ directory.  	     
 
 3. Create a virtual environment for the cssscl program (e.g. name it 'csssclvenv')
 
@@ -147,27 +147,27 @@ Install the cssscl package directly to your python global dist- or site-packages
    
    .. code-block:: bash 
 
-   $ tar -zxvf cssscl-1.0.tar.gz
-   $ cd cssscl-1.0
+       $ tar -zxvf cssscl-1.0.tar.gz
+       $ cd cssscl-1.0
 
 2. Check that all packages necessary to run the cssscl are installed and are avaialble 
 	      
    .. code-block:: bash 
 
-   $ ./cssscl_check_pre_installation.sh
+       $ ./cssscl_check_pre_installation.sh
 
 3. INSTALL cssscl   
 
    .. code-block:: 
    
-   $ sudo pip install .        
+       $ sudo pip install .        
 
 
 4. Configure mongodb
 
  .. code-block:: bash 
 
-     $ cssscl configure 
+      $ cssscl configure 
 
 Accept all the values prompted by default by pressing [ENTER]  
 
@@ -187,8 +187,7 @@ Uninstall cssscl
 Usage
 =====
 
-To test the classifier we have provided taxon and test data for you to download, as shown from the links provided below:
-------------------------------------------------------------------------------------------------------------------------
+**To test the classifier we have provided taxon and test data for you to download, as shown from the links provided below:**
 
 Download taxon data:
 
@@ -206,31 +205,22 @@ Download test/train data:
      $ tar -zxvf test_data.tar.gz
 
 
-Run the cssscl classifier
+**To run the cssscl classifier**
 
 1. First build the necessary databases from the training set.
 
-By default all databases will be outputted to the DIR where the TRAIN.fa resides :
-
-(Note that all paths provided in the examples below are using absolute/full paths to the files/directories).
- 
  .. code-block:: bash 
     
       $ cssscl build_dbs -btax -c -blast -nt 2 PATH_TO/test_data/TRAIN.fa PATH_TO/taxon/
 
-(the whole process should take ~ 37 min using 2 CPUs)
+By default all databases will be outputted to the DIR where the TRAIN.fa resides (note that all paths provided in the examples above are using absolute/full paths to the files/directories). The above command will build three databases (blast, compression and kmer dbs) for sequences in the training set.
 
-This will build three databases for sequences in the training set: 
+The cssscl's ``build_dbs`` module requires two positional arguments to be provided: 
 
-     |1. blast db
-     |2. compression db
-     |3. kmer count db 
-
-
-The cssscl's build_dbs module requires two positional arguments to be provided: 
 
      |1. a file in the fasta format (e.g. TRAIN.fa as in the example above) that specifies the collection of reference genomes composing the training set.
      |2. a directory (taxon/ in the example above) that specifies the location where the taxon data is stored (more specifically the directory should contain the following files: gi_taxid_nucl.dmp, names.dmp and nodes.dmp, these files can be downloaded from the NCBI taxonomy database at ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/).
+
 
      |The additional optional arguments used above have the following meaning:
      |------------------------------------------------------------------------
