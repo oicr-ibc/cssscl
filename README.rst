@@ -17,6 +17,11 @@ This is important for us since obtaining grants is one significant way to fund p
 and implementation for our project. Also if you find cssscl useful in your research feel 
 free to let us know.  
 
+
+Getting started: 
+================
+
+
 .. contents::
     :local:
     :depth: 1
@@ -37,7 +42,7 @@ Codename:       jessie / precise
 Dependencies on Debian and Ubuntu
 =================================
 
-- Python - Python 2.7.3+ supported. No support for Python 3 at the moment.
+- Python: Python 2.7.3+ supported. No support for Python 3 at the moment.
 
 In order to compile cssscl on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the following packages need to be installed:
 
@@ -52,6 +57,46 @@ Note: If you are testing cssscl using a VM please make sure that you have at lea
 ============
 Installation
 ============
+
+If any of the following packages (jellyfish, BLAST or plzip) are already INSTALLED on your system make sure that they are in your 
+executable search path (i.e. PATH variable) (as shown in the examples below):
+
+- BLAST
+.. code-block:: bash
+     $ export PATH=$PATH:PATH_TO_YOUR_BLAST 
+
+(e.g. export PATH=$PATH:/home/user_x/blast/ncbi-blast-2.2.30+/bin )
+
+- jellyfish
+.. code-block:: bash
+     # jellyfish
+     $ export PATH=$PATH:PATH_TO_YOUR_jellyfish 
+ 
+(e.g. export PATH=$PATH:/home/user_x/jellyfish-1.1.10/bin )
+
+- plzip
+.. code-block:: bash
+     $ export PATH=$PATH:PATH_TO_YOUR_plzip/plzip-1.1/plzip 
+
+(e.g. export PATH=$PATH:/home/user_x/plzip-1.1/plzip )
+
+To install the cssscl package you now have two options:
+
+1. Install the cssscl package using the Python's Virtual Environment tool to keep the dependencies required by the cssscl package 
+     in a separate directory and to keep your global python dist- or site-packages directory clean and manageable.
+ * Download the cssscl package
+ .. code-block:: bash 
+     $ wget --no-check-certificate https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/code/cssscl-1.0.tar.gz
+     $ tar -zxvf cssscl-1.0.tar.gz
+     $ cd cssscl-1.0
+ * CHECK THAT ALL PACKAGES NECESSARY TO RUN THE cssscl ARE INSTALLED AND ARE AVAILABLE
+ .. code-block:: bash 
+     $ ./cssscl_check_pre_installation.sh
+     Note: Run the 'cssscl_check_pre_installation.sh' script to check if all third party software is installed (namely pip, plzip,
+     BLAST, jellyfish and mongoDB), the script will also install them if necessary. The script will also check if: python (and  
+     python-dev), libxml2-dev, libxslt-dev, gfortran, libopenblas-dev and liblapack-dev are installed. 
+     All the third party executables such as blastn, plzip and jellyfish will be installed in the cssscl-1.0/src/bin/ directory.  	     
+
 
 =====
 Usage
