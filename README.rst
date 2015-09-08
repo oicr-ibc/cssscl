@@ -1,12 +1,12 @@
 CSSSCL: a taxonomic classifier for DNA sequences.
-======
+=================================================
 
 **Project Leader** Vincent Ferretti
 
 **Author** Ivan Borozan 
 
 About:
-------
+======
 
 **CSSSCL** is a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short reads.
 
