@@ -23,8 +23,8 @@ You will need a Python 2.7.3+ and MongoDB. For more details, please read below:
 
 #### Table of contents 
 
-[Dependencies](#Dependencies)
-[Build cssscl from the source](#Build cssscl from the source)
+[Dependencies](#dependencies)
+[Build cssscl from the source](#build)
 
 License and Copyright
 ---------------------
@@ -38,5 +38,5 @@ Acknowledgement
 This project is supported by the Ontario Institute for Cancer Research
 (OICR) through funding provided by the government of Ontario, Canada.
 
-#Dependencies
-#Build cssscl from the source
+# Dependencies
+# Build cssscl from the source
