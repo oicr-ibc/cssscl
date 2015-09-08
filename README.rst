@@ -32,10 +32,7 @@ Getting started:
 Tested environments 
 ====================
 
-Distributor ID: Debian / Ubuntu
-Description:    Debian GNU/Linux 8.1 (jessie) / Ubuntu 12.04.3 LTS
-Release:        8.1 64-bit / 12.04 64-bit
-Codename:       jessie / precise
+Distributor ID: Debian / Ubuntu  Description:    Debian GNU/Linux 8.1 (jessie) / Ubuntu 12.04.3 LTS  Release: 8.1 64-bit / 12.04 64-bit  Codename: jessie / precise
 
 
 =================================
@@ -58,7 +55,7 @@ Note: If you are testing cssscl using a VM please make sure that you have at lea
 Installation
 ============
 
-If any of the following packages: jellyfish, BLAST or plzip are already INSTALLED on your system make sure that they are in your 
+If any of the following packages: **jellyfish**, **BLAST** or **plzip** are already INSTALLED on your system make sure that they are in your 
 executable search path (i.e. PATH variable) (as shown in the examples below):
 
 - BLAST
