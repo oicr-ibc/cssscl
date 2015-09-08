@@ -1,4 +1,4 @@
-CSSSCL: a taxonomic classifier for DNA sequences
+CSSSCL: a taxonomic classifier for DNA sequences.
 ======
 
 **Project Leader** Vincent Ferretti
@@ -6,11 +6,11 @@ CSSSCL: a taxonomic classifier for DNA sequences
 **Author** Ivan Borozan 
 
 About:
-======
+------
 
-**CSSSCL** is a python package that uses **C** ombined **S** equence **S** imilarity **S** cores for accurate taxonomic **CL** assification of long and short reads.
+**CSSSCL** is a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short reads.
 
-Downloading and using cssscl is free, if you use cssscl or its code in your work please acknowledge cssscl by citing Borozan I, Ferretti V. "CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads.", Bioinformatics 2015.
+Downloading and using cssscl is free, if you use cssscl or its code in your work please acknowledge cssscl by citing Borozan I, Ferretti V. *CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads. Bioinformatics 2015.*
 
 This is important for us since obtaining grants is one significant way to fund planning and implementation for our project. Also if you find cssscl useful in your research feel free to let us know.  
 
@@ -30,11 +30,8 @@ Tested environments
 ====================
 
 ``Distributor ID: Debian/Ubuntu``  
-
 ``Description: Debian GNU/Linux 8.1 (jessie) / Ubuntu 12.04.3 LTS``   
-
 ``Release: 8.1 64-bit / 12.04 64-bit``  
-
 ``Codename: jessie / precise``
 
 
