@@ -50,12 +50,16 @@ In order to compile cssscl on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the foll
      $ sudo apt-get update
      $ sudo apt-get install build-essential python2.7 python2.7-dev g++ libxml2-dev libxslt-dev gfortran libopenblas-dev liblapack-dev
 
-Note: If you are testing cssscl using a VM please make sure that you have at least 1024 MB of RAM.
+**Note:** If you are testing cssscl using a VM please make sure that you have at least 1024 MB of RAM.
 
 
-============
-Installation
-============
+============================================================================
+Pre-build environments (docker and VM) for the quick deployment and testing 
+============================================================================
+
+=======================================================================================
+Installation (with automated installation of third party software on Ubuntu and Debian)
+=======================================================================================
 
 **Note:** if any of the following packages: **jellyfish**, **BLAST** or **plzip** are already INSTALLED on your system make sure that they are in your executable search path (i.e. PATH variable) (as shown in the examples below):
 
@@ -98,14 +102,14 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
      # or use git clone  
      $ git clone git@github.com:oicr-ibc/cssscl.git
 
-2. Check that all packages necessary to run the cssscl are installed and are avaialble 
+2. Check that all packages necessary to run the cssscl are installed and are available by running the cssscl_check_pre_installation.sh script 
 
   .. code-block:: bash 
     
      $ cd cssscl
      $ ./cssscl_check_pre_installation.sh
 
-**Note:** Run the **cssscl_check_pre_installation.sh** script to check if all third party software is installed (namely pip, plzip, BLAST, jellyfish and mongoDB), the script will also install them if necessary. The script will also check if: python (and python-dev), libxml2-dev, libxslt-dev, gfortran, libopenblas-dev and liblapack-dev are installed. All the third party executables such as blastn, plzip and jellyfish will be installed in the cssscl-1.0/src/bin/ directory.  	     
+**Note:** Run the **cssscl_check_pre_installation.sh** script to check if all third party software is installed (namely pip, plzip, BLAST, jellyfish and mongoDB), the script will also install them if necessary. The script will also check if: python (and python-dev), libxml2-dev, libxslt-dev, gfortran, libopenblas-dev and liblapack-dev are installed. All the third party executables such as blastn, plzip and jellyfish will be installed in the cssscl/src/bin/ directory.  	     
 
 3. Create a virtual environment for the cssscl program (e.g. name it 'csssclvenv')
 
@@ -125,7 +129,7 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
 
      $ sudo pip install .
     
-**Note:** this will install all the python modules necessary for running the cssscl package in the 'cssscl-master/csssclvenv/' directory. 
+**Note:** this will install all the python modules necessary for running the cssscl package in the 'cssscl/csssclvenv/' directory. 
 
 
 6. Configure mongodb
@@ -157,7 +161,7 @@ Install the cssscl package directly to your python global dist- or site-packages
      # or use git clone  
      $ git clone git@github.com:oicr-ibc/cssscl.git
 
-2. Check that all packages necessary to run the cssscl are installed and are avaialble 
+2. Check that all packages necessary to run the cssscl are installed and are avaialble by running the cssscl_check_pre_installation.sh script 
 	      
    .. code-block:: bash 
 
@@ -214,7 +218,7 @@ Download test/train data:
      $ tar -zxvf test_data.tar.gz
 
 
-**To run the cssscl classifier**
+**To run the cssscl classifier follow the setps 1 and 2 (without the optimization step) or 1 and 3 (with the optimization step) as presented below:**
 
 **1. Build the necessary databases from the training set:**
 
@@ -310,7 +314,7 @@ For more information please consult the cssscl's ``classify`` help page by typin
 
       $ cssscl classify -c -blast blastn -opt -tax genus -nt 8 PATH_TO/test_data/test/TEST.fa PATH_TO/test_data/
 
-Note that the optimization phase will take considerably longer when -c (compression) argument is used as mentioned above. 
+Note that the optimization phase will take considerably longer when -c (compression) argument is used as mentioned in the section below *Note regarding the compression measure*
 
 The additional optional arguments used above have the following meaning:
     
