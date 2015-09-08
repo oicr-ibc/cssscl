@@ -2,6 +2,7 @@ CSSSCL: a taxonomic classifier for DNA sequences
 ======
 
 **Project Leader** Vincent Ferretti
+
 **Author** Ivan Borozan 
 
 About:
@@ -20,8 +21,6 @@ free to let us know.
 Getting Started
 ---------------
 You will need a Python 2.7.3+ and MongoDB. For more details, please read below:
-
-
 
 
 License and Copyright
