@@ -33,7 +33,7 @@ Tested environments
 
 2. `Quick deployment and testing using a VM (large file ~ 5GB) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-a-VM>`_
 
-3. For system wide installation and testing please see the instrictions provided below README.rst#Getting started 
+3. For system wide installation and testing please see the instrictions provided below.
 
 
 
@@ -112,13 +112,14 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
 
 2. Check that all packages necessary to run the cssscl are installed and are available by running the **cssscl_check_pre_installation.sh** script 
 
+The ``cssscl_check_pre_installation.sh`` script will automatically install necessary dependencies and third party software on Ubuntu and Debian distributions for all other Linux distributions see the **Additional instructions for non-automated installation of third party software necessary for running the cssscl** below.
+
+**Note:** Run the **cssscl_check_pre_installation.sh** script to check if all third party software is installed (namely pip, plzip, BLAST, jellyfish and mongoDB), the script will also install them if necessary. The script will also check if: python (and python-dev), libxml2-dev, libxslt-dev, gfortran, libopenblas-dev and liblapack-dev are installed. All the third party executables such as blastn, plzip and jellyfish will be installed in the cssscl/src/bin/ directory.  	     
+
   .. code-block:: bash 
     
      $ cd cssscl
      $ ./cssscl_check_pre_installation.sh
-
-
-**Note:** Run the **cssscl_check_pre_installation.sh** script to check if all third party software is installed (namely pip, plzip, BLAST, jellyfish and mongoDB), the script will also install them if necessary. The script will also check if: python (and python-dev), libxml2-dev, libxslt-dev, gfortran, libopenblas-dev and liblapack-dev are installed. All the third party executables such as blastn, plzip and jellyfish will be installed in the cssscl/src/bin/ directory.  	     
 
 
 3. Create a virtual environment for the cssscl program (e.g. name it 'csssclvenv')
@@ -135,7 +136,7 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
      $ source csssclvenv/bin/activate
 
 
-5. INSTALL cssscl as root 
+5. Now INSTALL cssscl as root 
 
   .. code-block:: bash 
 
@@ -152,7 +153,8 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
     
 Accept all the values prompted by default by pressing [ENTER]  
 
-7. If you are done working in the virtual environment for the moment, you can deactivate it:
+
+**Note:** If you are done working in the virtual environment, you can deactivate it as shown below. If you need to run the cssscl program again you will need need to activate the python virtual environment as shown above. 
 
   .. code-block:: bash 
 
@@ -173,7 +175,11 @@ Install the cssscl package directly to your python global dist- or site-packages
      # or use git clone  
      $ git clone git@github.com:oicr-ibc/cssscl.git
 
-2. Check that all packages necessary to run the cssscl are installed and are avaialble by running the cssscl_check_pre_installation.sh script 
+2. Check that all packages necessary to run the cssscl are installed and are avaialble by running the ``cssscl_check_pre_installation.sh`` script 
+
+The ``cssscl_check_pre_installation.sh`` script will automatically install necessary dependencies and third party software on Ubuntu and Debian distributions for all other Linux distributions see the **Additional instructions for non-automated installation of third party software necessary for running the cssscl** below.
+
+**Note:** Run the **cssscl_check_pre_installation.sh** script to check if all third party software is installed (namely pip, plzip, BLAST, jellyfish and mongoDB), the script will also install them if necessary. The script will also check if: python (and python-dev), libxml2-dev, libxslt-dev, gfortran, libopenblas-dev and liblapack-dev are installed. All the third party executables such as blastn, plzip and jellyfish will be installed in the cssscl/src/bin/ directory.  	     
 	      
    .. code-block:: bash 
 
@@ -194,19 +200,6 @@ Install the cssscl package directly to your python global dist- or site-packages
      $ cssscl configure 
 
 Accept all the values prompted by default by pressing [ENTER]  
-
-
-=================
-Uninstall cssscl 
-=================
-
-**Note:** this will only work if you installed cssscl with the cmd 'sudo pip install .' as shown in the Installation section above. 
-          
- .. code-block:: bash 
-
-     $ cd cssscl/
-     $ ./cssscl_uninstall.sh 
-
 
 =====
 Usage
@@ -347,7 +340,6 @@ The additional optional arguments used above have the following meaning:
       | -opt, --optimize     Find the optimum k-mer value and estimate the accuracy
                         of predictions (default = False)
 
-
 ==================
 Supplementary data
 ==================
@@ -370,6 +362,18 @@ Taxon Data: `Taxon <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/da
 `Bacterial <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/bacterial2/bacterial2.tar.gz>`_ - dataset II Bacterial sequences (full dataset) used in the paper. 
 
 
+=================
+Uninstall cssscl 
+=================
+
+**Note:** this will only work if you installed cssscl with the cmd 'sudo pip install .' as shown in the Installation section above. 
+          
+ .. code-block:: bash 
+
+     $ cd cssscl/
+     $ ./cssscl_uninstall.sh 
+
+
 ======================================
 Note regarding the compression measure
 ======================================
@@ -380,10 +384,10 @@ the number of sequences in the training and test sets. Thus the compression meas
 databases (e.g. viruses) and/or with smaller datasets (i.e. smaller number of reads/contigs to classify).
 
 
-====================================================================================================
-Instructions for non-automated installation of third party software necessary for running the cssscl
-====================================================================================================
-In case the **cssscl_check_pre_installation.sh** script (see Installation above) fails please read the info below for the installation of individual third party software:
+===============================================================================================================
+Additional instructions for non-automated installation of third party software necessary for running the cssscl
+===============================================================================================================
+In case the **cssscl_check_pre_installation.sh** script (see the Installation section above) fails please read the info below for the installation of individual third party software:
 
 Necessary Python modules: 
 
