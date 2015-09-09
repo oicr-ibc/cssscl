@@ -26,7 +26,7 @@ Tested environments
    | Codename: jessie / precise
 
 
-**We have setup tree ways for installing and testing the cssscl package:**
+**We have setup tree ways for installing and testing the** ``cssscl`` **package:**
 
 
 1. `Quick deployment and testing using Docker (small file) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-Docker>`_
@@ -282,7 +282,7 @@ For more information please consult the ``cssscl's``  ``classify`` help page by 
       $ cssscl classify --help 
 
 
-**3. Perform the classification by optimizing the ``cssscl`` 's parameter values first:**
+**3. Perform the classification by optimizing the** ``cssscl's`` **parameter values first:**
 
 More information about the optimization can be found `here <https://github.com/oicr-ibc/cssscl/wiki/optimization>`_. 
 
