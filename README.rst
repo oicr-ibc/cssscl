@@ -11,7 +11,7 @@ About:
 
 **CSSSCL** is a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short reads.
 
-Downloading and using cssscl is free, if you use cssscl or its code in your work please acknowledge cssscl by citing Borozan I, Ferretti V. "*CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads. Bioinformatics 2015.*"
+Downloading and using `cssscl`` is free, if you use ``cssscl`` or its code in your work please acknowledge ``cssscl`` by citing Borozan I, Ferretti V. "*CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads. Bioinformatics 2015.*"
 
 This is important for us since obtaining grants is one significant way to fund planning and implementation for our project. Also if you find cssscl useful in your research feel free to let us know.  
 
@@ -97,7 +97,7 @@ To install the cssscl package you have two options:
 
 **Option A**
 
-Install the cssscl package using the **Python's Virtual Environment** tool to keep the dependencies required by the cssscl package in a separate directory and to keep your global python dist- or site-packages directory clean and manageable as shown below:
+Install the ``cssscl`` package using the **Python's Virtual Environment** tool to keep the dependencies required by the cssscl package in a separate directory and to keep your global python dist- or site-packages directory clean and manageable as shown below:
 
 1. Download the cssscl package
 
@@ -119,7 +119,7 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
 
 **Note:** for more information regarding the ``cssscl_check_pre_installation.sh`` script please see `here <https://github.com/oicr-ibc/cssscl/wiki/cssscl_check_pre_installation>`_.
 
-3. Create a virtual environment for the cssscl program (e.g. name it 'csssclvenv')
+3. Create a virtual environment for the ``cssscl`` program (e.g. name it 'csssclvenv')
 
   .. code-block:: bash 
  
@@ -139,7 +139,7 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
 
      $ sudo pip install .
     
-**Note:** this will install all the python modules necessary for running the cssscl package in the 'cssscl/csssclvenv/' directory. 
+**Note:** this will install all the python modules necessary for running the ``cssscl`` package in the 'cssscl/csssclvenv/' directory. 
 
 
 6. Configure cssscl
@@ -152,7 +152,7 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
 Accept all the values prompted by default by pressing [ENTER]  
 
 
-**Note:** If you are done working in the virtual environment, you can deactivate it as shown below. If you would like to run the cssscl program again (and you have deactivated python virtual environment) you will need to activate it again. 
+**Note:** If you are done working in the virtual environment, you can deactivate it as shown below. If you would like to run the ``cssscl`` program again (and you have deactivated python virtual environment) you will need to activate it again. 
 
   .. code-block:: bash 
 
@@ -161,9 +161,9 @@ Accept all the values prompted by default by pressing [ENTER]
 
 **Option B**
     
-Install the cssscl package directly to your python global dist- or site-packages directory as shown below (**CAUTION: some of the python packages on your system might be updated if required by the cssscl package**):
+Install the ``cssscl`` package directly to your python global dist- or site-packages directory as shown below (**CAUTION: some of the python packages on your system might be updated if required by the cssscl package**):
             
-1. Download the cssscl package 
+1. Download the ``cssscl`` package 
    
    .. code-block:: bash 
 
@@ -183,14 +183,14 @@ Install the cssscl package directly to your python global dist- or site-packages
 **Note:** for more information regarding the ``cssscl_check_pre_installation.sh`` script please see `here <https://github.com/oicr-ibc/cssscl/wiki/cssscl_check_pre_installation>`_.
 
 
-3. INSTALL cssscl   
+3. INSTALL ``cssscl`` as root  
 
    .. code-block:: 
    
      $ sudo pip install .        
 
 
-4. Configure cssscl 
+4. Configure ``cssscl`` 
 
  .. code-block:: bash 
 
@@ -220,7 +220,7 @@ Download test/train data:
      $ tar -zxvf test_data.tar.gz
 
 
-**To run the cssscl classifier follow the setps 1 and 2 (without the optimization step) or 1 and 3 (with the optimization step) as presented below:**
+**To run the ``cssscl`` classifier follow the setps 1 and 2 (without the optimization step) or 1 and 3 (with the optimization step) as presented below:**
 
 **1. Build the necessary databases from the training set:**
 
@@ -318,9 +318,9 @@ Taxon Data: `Taxon <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/da
 `Bacterial <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/bacterial2/bacterial2.tar.gz>`_ - dataset II Bacterial sequences (full dataset) used in the paper. 
 
 
-=================
-Uninstall cssscl 
-=================
+====================
+Uninstall ``cssscl`` 
+====================
 
 **Note:** this will only work if you installed cssscl with the cmd 'sudo pip install .' as shown in the Installation section above. 
           
