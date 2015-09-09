@@ -59,9 +59,6 @@ In order to compile cssscl on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the foll
      $ sudo apt-get update
      $ sudo apt-get install build-essential python2.7 python2.7-dev g++ libxml2-dev libxslt-dev gfortran libopenblas-dev liblapack-dev
 
-**Note:** If you are testing the ``cssscl`` package using a VM please make sure that you have at least 1024 MB of RAM.
-
-
 ============
 Installation
 ============
