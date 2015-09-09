@@ -296,16 +296,16 @@ The information about the additional optional arguments used in the command line
 Supplementary data
 ==================
 
-Accompanying supplementary file to the Bioinformatics 2015 paper "*CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads. Bioinformatics 2015*" can be found `here <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/supplementary_data.pdf>`_.
+1. Accompanying supplementary file to the Bioinformatics 2015 paper "*CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads. Bioinformatics 2015*" can be found `here <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/supplementary_data.pdf>`_.
 
-**Test data:**
+2. **Test data:**
 
 Genome sequences: `test data <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/test_data.tar.gz>`_
 
-Taxon Data: `Taxon <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/taxon.tar.gz>`_
+Taxon Data: `taxon <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/taxon.tar.gz>`_
 
 
-**Links to the three full datasets used to generate the results presented in Table 1 on pg.2 of the manuscript are shown below:**
+3. **Links to the three full datasets used to generate the results presented in Table 1 on pg.2 of the manuscript are shown below:**
 
 `Viral <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/viral/train_test_viral_full_data.tar.gz>`_ - Viral sequences (full dataset) used in the paper.
 
