@@ -300,18 +300,18 @@ Supplementary data
 
 2. **Test data:**
 
-       Genome sequences: `test data <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/test_data.tar.gz>`_
+      Genome sequences: `test data <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/test_data.tar.gz>`_
 
-       Taxon Data: `taxon <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/taxon.tar.gz>`_
+      Taxon Data: `taxon <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/taxon.tar.gz>`_
 
 
 3. **Links to the three full datasets used to generate the results presented in Table 1 on pg.2 of the manuscript are shown below:**
 
-       `Viral <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/viral/train_test_viral_full_data.tar.gz>`_ - Viral sequences (full dataset) used in the paper.
+      `Viral <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/viral/train_test_viral_full_data.tar.gz>`_ - Viral sequences (full dataset) used in the paper.
 
-        `Bacterial I <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/bacterial1/bacterial1.tar.gz>`_ - dataset I Bacterial sequences (full dataset) used in the paper.
+      `Bacterial I <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/bacterial1/bacterial1.tar.gz>`_ - dataset I Bacterial sequences (full dataset) used in the paper.
 
-        `Bacterial II <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/bacterial2/bacterial2.tar.gz>`_ - dataset II Bacterial sequences (full dataset) used in the paper. 
+       `Bacterial II <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/bacterial2/bacterial2.tar.gz>`_ - dataset II Bacterial sequences (full dataset) used in the paper. 
 
 
 ====================
