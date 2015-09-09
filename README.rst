@@ -19,20 +19,26 @@ This is important for us since obtaining grants is one significant way to fund p
 Tested environments 
 ====================
 
+
    | Distributor ID: Debian/Ubuntu
    | Description: Debian GNU/Linux 8.1 (jessie) / Ubuntu 12.04.3 LTS 
    | Release: 8.1 64-bit / 12.04 64-bit 
    | Codename: jessie / precise
 
 
-`Quick deployment and testing using Docker (small file) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-Docker>`_
-
-We have also setup two pre-build environments for the quick deployment and testing one uses docker and another a vm, for more information please see the instructions below. 
+**We have setup tree ways for installing and testing the cssscl package:**
 
 
-Getting started: 
-================
+1. `Quick deployment and testing using Docker (small file) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-Docker>`_
 
+2. `Quick deployment and testing using a VM (large file ~ 5GB) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-a-VM>`_
+
+3. For system wide installation and testing please see the instrictions provided below README.rst#Getting started 
+
+
+
+Getting started
+===============
 
 .. contents::
     :local:
@@ -56,215 +62,12 @@ In order to compile cssscl on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the foll
 **Note:** If you are testing cssscl using a VM please make sure that you have at least 1024 MB of RAM.
 
 
-======================================================
-Quick deployment and testing using Docker (small file)
-======================================================
+============
+Installation
+============
 
-We have setup a Dockerfile to create an image and a container that runs ubuntu 12.04 provisioned with Python 2.7.3, MongoDB, BLAST, plzip, jellyfish and the cssscl program for the quick deployment and testing.
 
-**Procedure:**
-
-  | a. Make sure that you have Docker installed on your system.
-  |    On how to install Docker on your system please consult the docker installation guide `here <https://docs.docker.com/installation/>`_
-  | b. Download the `ubuntucsss.tar.gz <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/code_2xx/ubuntucsss.tar.gz>`_ 
-     file that contains the Dockerfile.
-  | c. tar -zxvf ubuntucsss.tar.gz
-  | d. To run the ``cssscl`` program follow the instructions below:
-
-
-**Use docker to run cssscl**
-
-1.  cd to the ubuntucsss dir
-
-.. code-block:: bash 
-
-   # cd to the ubuntucsss dir
-   $ cd ./ubuntucsss   
-
-2. Build the docker image using the Dockerfile located in the ubuntucss directory as shown below
-
-.. code-block:: bash 
-
-    $ docker build -t cssscl/ubuntucsss .
-
-3. Now use the docker image cssscl/ubuntucsss to create and run a container:
-
-.. code-block:: bash 
-   
-    $ docker run -ti cssscl/ubuntucsss /bin/bash       
-
-Note: you could setup any number of cpus for the container to use as shown below:
-
-.. code-block:: bash 
-    
-    $ docker run -ti --cpuset-cpus="0-7" cssscl/ubuntucsss /bin/bash       
-    
-This will run the container with 8 cpus
-
-4. Inside the running container start the mongo database as shown below:
-
-.. code-block:: bash 
-    
-    $ mongod --fork --logpath /data/db/log
-
-
-5. Configure cssscl :
-
-.. code-block:: bash 
-
-    $ cssscl configure 
-
-
-Accept all the values prompted by default by pressing [ENTER]  
- 
-
-Run the cssscl classifier
-
-
-6. Build the necessary databases from the training set:
-
-.. code-block:: bash 
-
-    $ cssscl build_dbs -btax -c -blast -nt 2 /home/test_data/TRAIN.fa /home/taxon/
-
-(the whole process should take ~ 37 min using 2 CPUs)
-
-By default all databases will be outputted to the ``directory`` where the train.fa resides (note that all paths provided need to be absolute/full paths to the files/directories).
-
-For more information about the cssscl ``build_dbs`` please consult its help page by typing:
-
-
-.. code-block:: bash 
-
-    $ cssscl build_dbs --help
-
-
-For more information about cssscl please read the INSTALL.rst provided with this package.
-
-
-7. Perform the classification using the CSSSCL model:
-
-Note that for the test set data the parameters of the model have already been optimized and are included as part of the test set data, thus optimization is not required to be performed prior to running the classifier.
-
-.. code-block:: bash 
-
-    $ cssscl classify -c -blast blastn -tax genus -nt 2 /home/test_data/test/TEST.fa /home/test_data/
-
-(the whole process should take ~ 29 min using 2 CPUs)
-
-**Note**: in the above example the output file ``cssscl_results_genus.txt`` with classification results will be located in the directory where the TEST.fa resides. 
-
-This will run the classifier with all the similarity measures (including the compression and the blast measure) described in:  Borozan I, Watt S, Ferretti V. "Integrating alignment-based and alignment-free sequence similarity measures for biological sequence classification."  Bioinformatics. 2015 Jan 7. pii: btv006. 
-
-For more information about the cssscl ``classify`` please consult its help page by typing: 
-
-.. code-block:: bash 
-
-    $ cssscl classify --help 
-
-For more information about cssscl please read the README.rst or the INSTALL.rst provided with this package.
-
-
-==========================================================
-Quick deployment and testing using a VM (large file ~ 5GB)
-==========================================================
-
-We have setup an OVF-formatted virtual machine (VM) running Ubuntu provisioned with Python 2.7.3 (including all the python modules), MongoDB, BLAST, plzip and jellyfish for the quick testing of the CSSSCL program. The VM also includes taxon and test data.
-
-**Procedure**
-
-   | 1. Download the .ova file from `here <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/cssscl_opt.ova>`_
-   | 2. In Workstation, select File > Import appliance.
-   | 3. Browse to the .ova file and click Open.
-   | 4. Type a name for the virtual machine, type or browse to the directory for the virtual machine files, and click Import. Workstation performs OVF specification conformance and virtual hardware compliance checks. A status bar indicates the progress of the import process.
-   | 5. If the import fails, click Retry to try again, or click Cancel to cancel the import.
-   | If you retry the import, Workstation relaxes the OVF specification conformance and virtual hardware compliance checks and you might not be able to use the virtual machine in Workstation.
-   | After Workstation successfully imports the OVF virtual machine, the virtual machine appears in the virtual machine library.
-   | 6. Then to install and run ``cssscl`` follow the instructions below
-
-**Run cssscl on a VM**
-
-First login to the VM
-
-| precise64 login:vagrant
-| Password:vagrant
-
-
-1. Download the cssscl package code from and install the program 
-
-  .. code-block:: bash 
-    
-    # download the cssscl package
-    $ wget --no-check-certificate https://github.com/oicr-ibc/cssscl/archive/master.tar.gz
-    $ tar -zxvf master.tar.gz; mv cssscl-master cssscl 
-    $ cd cssscl/
-    # check the installation 
-    $ ./cssscl_check_pre_installation.sh
-    # for system wide installation:
-    $ sudo pip install .
-
-
-For more information about ``cssscl`` please read the REAME.rst or the INSTALL.rst provided with this package.
-
-2. Configure cssscl :
-
-  .. code-block:: bash 
-
-    $ cssscl configure 
-
-Accept all the values prompted by default by pressing [ENTER]  
- 
-
-3. Build the necessary databases from the training set:
-
-  .. code-block:: bash 
-
-    $ cssscl build_dbs -btax -c -blast -nt 2 /home/vagrant/test_data/TRAIN.fa /home/vagrant/taxon/
-
-(the whole process should take ~ 37 min using 2 CPUs)
-
-By default all databases will be outputted to the ``directory`` where the train.fa resides.
-
-For more information about the cssscl ``build_dbs`` please consult its help page by typing:
-
-  .. code-block:: bash 
-
-    $ cssscl build_dbs --help
-
-
-For more information about cssscl please read the REAME.rst or the INSTALL.rst provided with this package.
-
-
-4. Perform the classification using the CSSSCL model:
-
-Note that for the test set data the parameters of the model have already been optimized and are included as part of the test set data, thus optimization is not required to be performed prior to running the classifier.
-
-  .. code-block:: bash 
-
-    $ cssscl classify -c -blast blastn -tax genus -nt 2 /home/vagrant/test_data/test/TEST.fa /home/vagrant/test_data/
-
-
-(the whole process should take ~ 29 min using 2 CPUs)
-
-Note that in the above example the output file ``cssscl_results_genus.txt`` with classification results will be located in the directory where the TEST.fa resides. 
-
-This will run the classifier with all the similarity measures (including the compression and the blast measure) described in:  Borozan I, Watt S, Ferretti V. "Integrating alignment-based and alignment-free sequence similarity measures for biological sequence classification."  Bioinformatics. 2015 Jan 7. pii: btv006. 
-
-For more information about the cssscl ``classify`` please consult its help page by typing: 
-
-  .. code-block:: bash 
-
-    $ cssscl classify --help 
-
-For more information about cssscl please read the INSTALL.rst provided with this package.
-
-
-
-=======================================================================================
-Installation (with automated installation of third party software on Ubuntu and Debian)
-=======================================================================================
-
-**Note:** if any of the following packages: **jellyfish**, **BLAST** or **plzip** are already INSTALLED on your system make sure that they are in your executable search path (i.e. PATH variable) (as shown in the examples below):
+**Note:** if any of the following packages: **jellyfish**, **BLAST** or **plzip** are **already installed** on your system make sure that they are in your executable search path (i.e. PATH variable) (as shown in the examples below):
 
 *BLAST*
 
@@ -288,8 +91,9 @@ Installation (with automated installation of third party software on Ubuntu and 
      $ export PATH=$PATH:PATH_TO_YOUR_plzip
 
 
+
 To install the cssscl package you have two options:
--------------------------------------------------------
+---------------------------------------------------
 
 **Option A**
 
@@ -305,6 +109,7 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
      # or use git clone  
      $ git clone git@github.com:oicr-ibc/cssscl.git
 
+
 2. Check that all packages necessary to run the cssscl are installed and are available by running the **cssscl_check_pre_installation.sh** script 
 
   .. code-block:: bash 
@@ -312,7 +117,9 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
      $ cd cssscl
      $ ./cssscl_check_pre_installation.sh
 
+
 **Note:** Run the **cssscl_check_pre_installation.sh** script to check if all third party software is installed (namely pip, plzip, BLAST, jellyfish and mongoDB), the script will also install them if necessary. The script will also check if: python (and python-dev), libxml2-dev, libxslt-dev, gfortran, libopenblas-dev and liblapack-dev are installed. All the third party executables such as blastn, plzip and jellyfish will be installed in the cssscl/src/bin/ directory.  	     
+
 
 3. Create a virtual environment for the cssscl program (e.g. name it 'csssclvenv')
 
@@ -320,11 +127,13 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
  
      $ virtualenv csssclvenv
 
+
 4. To begin using the virtual environment, it first needs to be activated:
 
   .. code-block:: bash 
 
      $ source csssclvenv/bin/activate
+
 
 5. INSTALL cssscl as root 
 
@@ -564,15 +373,16 @@ Taxon Data: `Taxon <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/da
 ======================================
 Note regarding the compression measure
 ======================================
+
 The use of the compression measure will slow down considerably the optimization and the classification parts because of the running 
 time complexity ~ O(n*n) (for the optimization phase) and  ~ O(n*m) for the classification phase, where n and m are respectively 
 the number of sequences in the training and test sets. Thus the compression measure should only be used with smaller genome 
 databases (e.g. viruses) and/or with smaller datasets (i.e. smaller number of reads/contigs to classify).
 
 
-===================================================================================
-Non-automated installation of third party software necessary for running the cssscl
-===================================================================================
+====================================================================================================
+Instructions for non-automated installation of third party software necessary for running the cssscl
+====================================================================================================
 In case the **cssscl_check_pre_installation.sh** script (see Installation above) fails please read the info below for the installation of individual third party software:
 
 Necessary Python modules: 
@@ -627,7 +437,6 @@ http://download.savannah.gnu.org/releases/lzip/plzip/
 .. code-block:: bash 
 
      $ wget --no-check-certificate http://download.savannah.gnu.org/releases/lzip/lzlib/lzlib-1.5.tar.gz 
-
 
 2. Install lzlib:
 
