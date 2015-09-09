@@ -16,6 +16,16 @@ Downloading and using cssscl is free, if you use cssscl or its code in your work
 This is important for us since obtaining grants is one significant way to fund planning and implementation for our project. Also if you find cssscl useful in your research feel free to let us know.  
 
 
+Tested environments 
+====================
+
+| Distributor ID: Debian/Ubuntu
+| Description: Debian GNU/Linux 8.1 (jessie) / Ubuntu 12.04.3 LTS 
+| Release: 8.1 64-bit / 12.04 64-bit 
+| Codename: jessie / precise
+
+
+
 Getting started: 
 ================
 
@@ -24,17 +34,6 @@ Getting started:
     :local:
     :depth: 1
     :backlinks: none
-
-
-====================
-Tested environments 
-====================
-
-
-| Distributor ID: Debian/Ubuntu
-| Description: Debian GNU/Linux 8.1 (jessie) / Ubuntu 12.04.3 LTS 
-| Release: 8.1 64-bit / 12.04 64-bit 
-| Codename: jessie / precise
 
 
 =================================
@@ -192,7 +191,7 @@ Uninstall cssscl
           
  .. code-block:: bash 
 
-     $ cd cssscl-master/
+     $ cd cssscl/
      $ ./cssscl_uninstall.sh 
 
 
@@ -226,13 +225,15 @@ Download test/train data:
     
      $ cssscl build_dbs -btax -c -blast -nt 2 PATH_TO/test_data/TRAIN.fa PATH_TO/taxon/
 
-By default all databases will be outputted to the DIR where the TRAIN.fa resides (note that all paths provided in the examples above are using absolute/full paths to the files/directories). The above command will build three databases (blast, compression and the kmer db) for sequences in the training set.
+(the whole process should take ~ 37 min using 2 CPUs)
+
+By default all databases will be outputted to the directory where the TRAIN.fa resides (note that all paths provided in the examples above are using absolute/full paths to the files/directories). The above command will build three databases (blast, compression and the kmer db) for sequences in the training set.
 
 The cssscl's ``build_dbs`` module requires two positional arguments to be provided: 
 
-      | i. a file in the fasta format (e.g. TRAIN.fa as in the example above) that specifies the collection of reference genomes composing the training set.
+      | i. a **file** in the fasta format (e.g. TRAIN.fa as in the example above) that specifies the collection of reference genomes composing the training set.
       |
-      | ii. a directory (taxon/ in the example above) that specifies the location where the taxon data is stored (more specifically the directory should contain the following files: gi_taxid_nucl.dmp, names.dmp and nodes.dmp, these files can be downloaded from the NCBI taxonomy database at ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/).
+      | ii. a **directory** (taxon/ in the example above) that specifies the location where the taxon data is stored (more specifically the directory should contain the following files: gi_taxid_nucl.dmp, names.dmp and nodes.dmp, these files can be downloaded from the NCBI taxonomy database at ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/).
 
 
 The additional optional arguments used in the command line above have the following meaning:
@@ -275,9 +276,9 @@ Note that in the above example the output file ``cssscl_results_genus.txt`` with
 
 The cssscl's ``classify`` module requires two positional arguments to be provided: 
 
-      | 1. a test data with sequences in the FASTA format for classification (e.g. TEST.fa as in the example above)
+      | 1. a **file** with test data with sequences in the FASTA format for classification (e.g. TEST.fa as in the example above)
       |
-      | 2. a directory where the databases (built using the training set) reside
+      | 2. a **directory** where the databases (built using the training set) reside
 
 
 This will run the classifier with all the similarity measures (including the compression and the blast measure) described in:  Borozan I, Watt S, Ferretti V. "*Integrating alignment-based and alignment-free sequence similarity measures for biological sequence classification.*"  Bioinformatics. 2015 Jan 7. pii: btv006.
@@ -314,7 +315,7 @@ For more information please consult the cssscl's ``classify`` help page by typin
 
       $ cssscl classify -c -blast blastn -opt -tax genus -nt 8 PATH_TO/test_data/test/TEST.fa PATH_TO/test_data/
 
-Note that the optimization phase will take considerably longer when -c (compression) argument is used as mentioned in the section below *Note regarding the compression measure*
+Note that the optimization phase will take considerably longer when -c (compression) argument is used as mentioned in the section below **Note regarding the compression measure**.
 
 The additional optional arguments used above have the following meaning:
     
@@ -332,6 +333,7 @@ The additional optional arguments used above have the following meaning:
                         Specify the number of threads to be used (default = 1)
       | -opt, --optimize     Find the optimum k-mer value and estimate the accuracy
                         of predictions (default = False)
+
 
 
 ======================================
@@ -485,6 +487,25 @@ In order to complete the installation of the packages, you need to update the so
      $ apt-get update 
      $ apt-get install mongodb-10gen=2.4.14
 
+
+==================
+Supplementary data
+==================
+
+`supplementary_data.pdf <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/supplementary_data.pdf>`_
+
+**Test data:**
+
+Genome sequences: `test data <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/test_data.tar.gz>`_
+
+Taxon Data: `Taxon <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/taxon.tar.gz>`_
+
+
+**Links to the three full datasets used to generate the results presented in Table 1 on pg.2 of the manuscript are shown below**
+
+`Viral <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/viral/train_test_viral_full_data.tar.gz>`_ - Viral sequences (full dataset) used in the paper.
+`Bacterial <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/bacterial1/bacterial1.tar.gz>`_ - dataset I Bacterial sequences (full dataset) used in the paper.
+Bacterial - dataset II Bacterial sequences (full dataset) used in the paper. 
 
 
 =====================
