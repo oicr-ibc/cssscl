@@ -251,8 +251,6 @@ For more information please consult the ``cssscl`` 's ``build_dbs`` help page by
 
 **2. Perform the classification using the test set without the optimization:**
 
-**Note**: For the test set data provided above the values of the parameters used in the model have already been optimized and are included as part of the test set data (see the optimum_kmer directory in the test_set/ directory provided). Thus for the test dataset the optimization is not required to be performed prior to running the classifier. On how to run the classifier by performing the optimization stage first please see the step 3 below. 
-
  .. code-block:: bash 
 
       # use cssscl to classify sequences in TEST.fa 
@@ -261,6 +259,7 @@ For more information please consult the ``cssscl`` 's ``build_dbs`` help page by
 (the whole process should take ~ 29 min using 2 CPUs)
 
 Note that in the above example the output file ``cssscl_results_genus.txt`` with classification results will be located in the directory where the TEST.fa resides. 
+**Note**: For the test set data provided above the values of the parameters used in the model have already been optimized and are included as part of the test set data (see the optimum_kmer directory in the test_set/ directory provided). Thus for the test dataset the optimization is not required to be performed prior to running the classifier. On how to run the classifier by performing the optimization stage first please see the step 3 below. 
 
 The ``cssscl's``  ``classify`` module requires two positional arguments to be provided: 
 
