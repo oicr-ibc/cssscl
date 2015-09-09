@@ -58,11 +58,11 @@ Docker: pre-build environment for the quick deployment and testing (small file)
 
 We have setup a Dockerfile to create an image and a container that runs ubuntu 12.04 provisioned with Python 2.7.3, MongoDB, BLAST, plzip, jellyfish and the cssscl program for the quick deployment and testing.
 
-Procedure:
+**Procedure:**
 
 | a. Make sure that you have Docker installed on your system.
 |    On how to install Docker on your system please consult the docker installation guide `here <https://docs.docker.com/installation/>`_
-| b. Download the `ubuntucsss.tar.gz https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/code_2xx/ubuntucsss.tar.gz>`_ 
+| b. Download the `ubuntucsss.tar.gz <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/code_2xx/ubuntucsss.tar.gz>`_ 
      file that contains the Dockerfile.
 | c. tar -zxvf ubuntucsss.tar.gz
 | d. To run the ``cssscl`` program follow the instructions below:
@@ -70,7 +70,7 @@ Procedure:
 
 **Use docker to run cssscl**
 
-1.  
+1.  cd to the ubuntucsss dir
 
 .. code-block:: bash 
 
@@ -95,7 +95,7 @@ Note: you could setup any number of cpus for the container to use as shown below
     
     $ docker run -ti --cpuset-cpus="0-7" cssscl/ubuntucsss /bin/bash       
     
-this will run the container with 8 cpus)
+This will run the container with 8 cpus
 
 4. Inside the running container start the mongo database as shown below:
 
@@ -113,9 +113,11 @@ this will run the container with 8 cpus)
 
 Accept all the values prompted by default by pressing [ENTER]  
  
-Run the cssscl classifier:: 
 
-6. build the necessary databases from the training set:
+Run the cssscl classifier
+
+
+6. Build the necessary databases from the training set:
 
 .. code-block:: bash 
 
@@ -123,7 +125,7 @@ Run the cssscl classifier::
 
 (the whole process should take ~ 37 min using 2 CPUs)
 
-By default all databases will be outputted to the ``dir`` where the train.fa resides (note that all paths provided need to be absolute/full paths to the files/directories).
+By default all databases will be outputted to the ``directory`` where the train.fa resides (note that all paths provided need to be absolute/full paths to the files/directories).
 
 For more information about the cssscl ``build_dbs`` please consult its help page by typing:
 
@@ -146,7 +148,7 @@ Note that for the test set data the parameters of the model have already been op
 
 (the whole process should take ~ 29 min using 2 CPUs)
 
-Note that in the above example the output file 'cssscl_results_genus.txt' with classification results will be located in the directory where the TEST.fa resides. 
+**Note**: in the above example the output file ``cssscl_results_genus.txt`` with classification results will be located in the directory where the TEST.fa resides. 
 
 This will run the classifier with all the similarity measures (including the compression and the blast measure) described in:  Borozan I, Watt S, Ferretti V. "Integrating alignment-based and alignment-free sequence similarity measures for biological sequence classification."  Bioinformatics. 2015 Jan 7. pii: btv006. 
 
@@ -156,7 +158,7 @@ For more information about the cssscl ``classify`` please consult its help page 
 
     $ cssscl classify --help 
 
-For more information about cssscl please read the INSTALL.rst provided with this package.
+For more information about cssscl please read the README.rst or the INSTALL.rst provided with this package.
 
 
 
@@ -166,20 +168,21 @@ VM: pre-build environment for the quick deployment and testing (large file ~ 5GB
 
 We have setup an OVF-formatted virtual machine (VM) running Ubuntu provisioned with Python 2.7.3 (including all the python modules), MongoDB, BLAST, plzip and jellyfish for the quick testing of the CSSSCL program. The VM also includes taxon and test data.
 
-Procedure
+**Procedure**
 
-| 1. Download the .ova file from `here <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/cssscl_opt.ova`_
+| 1. Download the .ova file from `here <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/cssscl_opt.ova>`_
 | 2. In Workstation, select File > Import appliance.
 | 3. Browse to the .ova file and click Open.
 | 4. Type a name for the virtual machine, type or browse to the directory for the virtual machine files, and click Import. Workstation performs OVF specification conformance and virtual hardware compliance checks. A status bar indicates the progress of the import process.
 | 5. If the import fails, click Retry to try again, or click Cancel to cancel the import.
 | If you retry the import, Workstation relaxes the OVF specification conformance and virtual hardware compliance checks and you might not be able to use the virtual machine in Workstation.
 | After Workstation successfully imports the OVF virtual machine, the virtual machine appears in the virtual machine library.
-| 6. Then to install and run ``cssscl`` by following the instructions below
+6. Then to install and run ``cssscl`` by following the instructions below
+
 
 **Use a VM to run cssscl**
 
-First login to the VM::
+First login to the VM
 
 | precise64 login:vagrant
 | Password:vagrant
@@ -198,8 +201,8 @@ First login to the VM::
     # for system wide installation:
     $ sudo pip install .
 
-For more information about ``cssscl`` please read the REAME.rst or the INSTALL.rst provided with this package.
 
+For more information about ``cssscl`` please read the REAME.rst or the INSTALL.rst provided with this package.
 
 2. Configure cssscl :
 
@@ -210,8 +213,7 @@ For more information about ``cssscl`` please read the REAME.rst or the INSTALL.r
 Accept all the values prompted by default by pressing [ENTER]  
  
 
-3. build the necessary databases from the training set:
--------------------------------------------------------------
+3. Build the necessary databases from the training set:
 
   .. code-block:: bash 
 
@@ -219,7 +221,7 @@ Accept all the values prompted by default by pressing [ENTER]
 
 (the whole process should take ~ 37 min using 2 CPUs)
 
-By default all databases will be outputted to the DIR where the train.fa resides.
+By default all databases will be outputted to the ``directory`` where the train.fa resides.
 
 For more information about the cssscl ``build_dbs`` please consult its help page by typing:
 
@@ -252,8 +254,9 @@ For more information about the cssscl ``classify`` please consult its help page 
 
     $ cssscl classify --help 
 
-
 For more information about cssscl please read the INSTALL.rst provided with this package.
+
+
 
 =======================================================================================
 Installation (with automated installation of third party software on Ubuntu and Debian)
