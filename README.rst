@@ -11,7 +11,7 @@ About:
 
 **CSSSCL** is a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short reads.
 
-Downloading and using `cssscl`` is free, if you use ``cssscl`` or its code in your work please acknowledge ``cssscl`` by citing Borozan I and Ferretti V. "*CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads. Bioinformatics 2015.*"
+Downloading and using ``cssscl`` is free, if you use ``cssscl`` or its code in your work please acknowledge ``cssscl`` by citing Borozan I and Ferretti V. "*CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads. Bioinformatics 2015.*"
 
 This is important for us since obtaining grants is one significant way to fund planning and implementation for our project. Also if you find ``cssscl`` useful in your research feel free to let us know.  
 
@@ -296,7 +296,7 @@ The information about the additional optional arguments used in the command line
 Supplementary data
 ==================
 
-1. Accompanying **supplementary file** to the Bioinformatics 2015 paper "*CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads. Bioinformatics 2015*" can be found `here <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/supplementary_data.pdf>`_.
+1. **Accompanying supplementary file** to the Bioinformatics 2015 paper "*CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads. Bioinformatics 2015*" can be found `here <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/supplementary_data.pdf>`_.
 
 2. **Test data:**
 
@@ -394,7 +394,7 @@ http://download.savannah.gnu.org/releases/lzip/plzip/
 
      $ wget --no-check-certificate http://download.savannah.gnu.org/releases/lzip/lzlib/lzlib-1.5.tar.gz 
 
-2. Install lzlib:
+2. Install lzlib-1.5:
 
 .. code-block:: bash 
 
