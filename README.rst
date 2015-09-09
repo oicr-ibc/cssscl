@@ -62,7 +62,8 @@ Procedure:
 
 | a. Make sure that you have Docker installed on your system.
 |    On how to install Docker on your system please consult the docker installation guide `here <https://docs.docker.com/installation/>`_
-| b. Download the `ubuntucsss.tar.gz https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/code_2xx/ubuntucsss.tar.gz>`_ file that contains the Dockerfile.
+| b. Download the `ubuntucsss.tar.gz https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/code_2xx/ubuntucsss.tar.gz>`_ 
+     file that contains the Dockerfile.
 | c. tar -zxvf ubuntucsss.tar.gz
 | d. To run the ``cssscl`` program follow the instructions below:
 
