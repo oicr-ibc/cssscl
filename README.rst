@@ -11,7 +11,7 @@ About:
 
 **CSSSCL** is a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short reads.
 
-Downloading and using `cssscl`` is free, if you use ``cssscl`` or its code in your work please acknowledge ``cssscl`` by citing Borozan I, Ferretti V. "*CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads. Bioinformatics 2015.*"
+Downloading and using `cssscl`` is free, if you use ``cssscl`` or its code in your work please acknowledge ``cssscl`` by citing Borozan I and Ferretti V. "*CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads. Bioinformatics 2015.*"
 
 This is important for us since obtaining grants is one significant way to fund planning and implementation for our project. Also if you find ``cssscl`` useful in your research feel free to let us know.  
 
@@ -233,9 +233,9 @@ By default all databases will be outputted to the directory where the TRAIN.fa r
 
 The ``cssscl's`` ``build_dbs`` module requires two positional arguments to be provided: 
 
-      | i. a **file** in the fasta format (e.g. TRAIN.fa as in the example above) that specifies the collection of reference genomes composing the training set.
+      | 1. a **file** in the fasta format (e.g. TRAIN.fa as in the example above) that specifies the collection of reference genomes composing the training set.
       |
-      | ii. a **directory** (taxon/ in the example above) that specifies the location where the taxon data is stored (more specifically the directory should contain the following files: gi_taxid_nucl.dmp, names.dmp and nodes.dmp, these files can be downloaded from the NCBI taxonomy database at ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/).
+      | 2. a **directory** (taxon/ in the example above) that specifies the location where the taxon data is stored (more specifically the directory should contain the following files: gi_taxid_nucl.dmp, names.dmp and nodes.dmp, these files can be downloaded from the NCBI taxonomy database at ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/).
 
 The information about the additional optional arguments used in the command line above is provided `here <https://github.com/oicr-ibc/cssscl/wiki/build_dbs>`_.
 
@@ -257,7 +257,7 @@ For more information please consult the ``cssscl's``  ``build_dbs`` help page by
 
 Note that in the above example the output file ``cssscl_results_genus.txt`` with classification results will be located in the directory where the TEST.fa resides. 
 
-**Note**: For the test set data provided above the values of the parameters used in the model have already been optimized and are included as part of the test set (see the ``optimum_kmer`` directory in the ``test_set/`` directory `provided <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/taxon.tar.gz>`_ ). Thus for the test dataset the optimization is not required to be performed prior to running the classifier. On how to run the classifier by performing the optimization stage first please see the step 3 below. 
+**Note**: For the `test set data <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/test_data.tar.gz>`_ provided above the values of the parameters used in the model have already been optimized and are included as part of the test set (see the ``optimum_kmer`` directory in the ``test_set/`` directory provided). Thus for the test dataset the optimization is not required to be performed prior to running the classifier. On how to run the classifier by performing the optimization stage first please see the step 3 below. 
 
 The ``cssscl's``  ``classify`` module requires two positional arguments to be provided: 
 
