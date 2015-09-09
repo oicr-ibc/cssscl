@@ -110,17 +110,14 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
      $ git clone git@github.com:oicr-ibc/cssscl.git
 
 
-2. Check that all packages necessary to run the cssscl are installed and are available by running the **cssscl_check_pre_installation.sh** script 
-
-The ``cssscl_check_pre_installation.sh`` script will automatically install necessary dependencies and third party software on Ubuntu and Debian distributions for all other Linux distributions see the **Additional instructions for non-automated installation of third party software necessary for running the cssscl** below.
-
-**Note:** Run the **cssscl_check_pre_installation.sh** script to check if all third party software is installed (namely pip, plzip, BLAST, jellyfish and mongoDB), the script will also install them if necessary. The script will also check if: python (and python-dev), libxml2-dev, libxslt-dev, gfortran, libopenblas-dev and liblapack-dev are installed. All the third party executables such as blastn, plzip and jellyfish will be installed in the cssscl/src/bin/ directory.  	     
+2. Check that all packages necessary to run the cssscl are installed and are available by running the ``cssscl_check_pre_installation.sh`` script (only for Ubuntu/Debian distributions). 
 
   .. code-block:: bash 
     
      $ cd cssscl
      $ ./cssscl_check_pre_installation.sh
 
+**Note:** for more information regarding the ``cssscl_check_pre_installation.sh`` script please see `here <https://github.com/oicr-ibc/cssscl/wiki/cssscl_check_pre_installation>`_.
 
 3. Create a virtual environment for the cssscl program (e.g. name it 'csssclvenv')
 
@@ -151,10 +148,11 @@ The ``cssscl_check_pre_installation.sh`` script will automatically install neces
 
      $ cssscl configure 
     
+
 Accept all the values prompted by default by pressing [ENTER]  
 
 
-**Note:** If you are done working in the virtual environment, you can deactivate it as shown below. If you need to run the cssscl program again you will need need to activate the python virtual environment as shown above. 
+**Note:** If you are done working in the virtual environment, you can deactivate it as shown below. If you would like to run the cssscl program again (and you have deactivated python virtual environment) you will need to activate it again. 
 
   .. code-block:: bash 
 
@@ -176,15 +174,14 @@ Install the cssscl package directly to your python global dist- or site-packages
      $ git clone git@github.com:oicr-ibc/cssscl.git
 
 2. Check that all packages necessary to run the cssscl are installed and are avaialble by running the ``cssscl_check_pre_installation.sh`` script 
-
-The ``cssscl_check_pre_installation.sh`` script will automatically install necessary dependencies and third party software on Ubuntu and Debian distributions for all other Linux distributions see the **Additional instructions for non-automated installation of third party software necessary for running the cssscl** below.
-
-**Note:** Run the **cssscl_check_pre_installation.sh** script to check if all third party software is installed (namely pip, plzip, BLAST, jellyfish and mongoDB), the script will also install them if necessary. The script will also check if: python (and python-dev), libxml2-dev, libxslt-dev, gfortran, libopenblas-dev and liblapack-dev are installed. All the third party executables such as blastn, plzip and jellyfish will be installed in the cssscl/src/bin/ directory.  	     
 	      
    .. code-block:: bash 
 
      $ cd cssscl
      $ ./cssscl_check_pre_installation.sh
+
+**Note:** for more information regarding the ``cssscl_check_pre_installation.sh`` script please see `here <https://github.com/oicr-ibc/cssscl/wiki/cssscl_check_pre_installation>`_.
+
 
 3. INSTALL cssscl   
 
@@ -242,23 +239,7 @@ The cssscl's ``build_dbs`` module requires two positional arguments to be provid
       | ii. a **directory** (taxon/ in the example above) that specifies the location where the taxon data is stored (more specifically the directory should contain the following files: gi_taxid_nucl.dmp, names.dmp and nodes.dmp, these files can be downloaded from the NCBI taxonomy database at ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/).
 
 
-The additional optional arguments used in the command line above have the following meaning:
-
-
-      | -btax, --build_taxonomy_data
-      |
-                         Build (or rebuild) the taxonomy data (e.g. when
-                         initializing the database or updating the taxon
-                         information) (default = False)
-      | -c, --use_compression
-      |
-                         Build the compression db (default = False)
-      | -blast, --use_blast   
-      |  Build the BLAST db (default = False)
-      | -nt NUMBER_THREADS, --number_threads NUMBER_THREADS
-      |
-                         Specify the number of threads to be used (default = 1
-                         CPU)
+The information about the additional optional arguments used in the command line above is provided `here <https://github.com/oicr-ibc/cssscl/wiki/build_dbs>`_
 
 
 For more information please consult the cssscl's ``build_dbs`` help page by typing:
@@ -289,20 +270,8 @@ The cssscl's ``classify`` module requires two positional arguments to be provide
 
 This will run the classifier with all the similarity measures (including the compression and the blast measure) described in:  Borozan I, Watt S, Ferretti V. "*Integrating alignment-based and alignment-free sequence similarity measures for biological sequence classification.*"  Bioinformatics. 2015 Jan 7. pii: btv006.
 
-The additional optional arguments used above have the following meaning:
 
-      | -tax {phylum,class,order,family,genus,species}, --taxonRank {phylum,class,order,family,genus,species}
-      |
-                        Specify the taxon rank for classification (default = phylum)
-      | -blast {blastn,megablast}, --use_blast {blastn,megablast}
-
-      |                     Use the blast similarity measure (default = blastn)
-      | -c, --use_compression
-      |
-                        Use the compression similarity measure (default = False)
-      | -nt NUMBER_THREADS, --number_threads NUMBER_THREADS
-
-      |                    Specify the number of threads to be used (default = 1)
+The information about the additional optional arguments used in the command line above is provided `here <https://github.com/oicr-ibc/cssscl/wiki/classify>`_
 
 
 For more information please consult the cssscl's ``classify`` help page by typing 
@@ -323,22 +292,9 @@ For more information please consult the cssscl's ``classify`` help page by typin
 
 Note that the optimization phase will take considerably longer when -c (compression) argument is used as mentioned in the section below **Note regarding the compression measure**.
 
-The additional optional arguments used above have the following meaning:
     
-      | -tax {phylum,class,order,family,genus,species}, --taxonRank {phylum,class,order,family,genus,species}
-      |
-                        Specify the taxon rank for classification (default = phylum)
-      | -blast {blastn,megablast}, --use_blast {blastn,megablast}
-      |
-                        Use the blast similarity measure (default = blastn)
-      | -c, --use_compression
-      |
-                        Use the compression similarity measure (default = False)
-      | -nt NUMBER_THREADS, --number_threads NUMBER_THREADS
-      |
-                        Specify the number of threads to be used (default = 1)
-      | -opt, --optimize     Find the optimum k-mer value and estimate the accuracy
-                        of predictions (default = False)
+The information about the additional optional arguments used in the command line above is provided `here <https://github.com/oicr-ibc/cssscl/wiki/classify_opt>`_
+
 
 ==================
 Supplementary data
