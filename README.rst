@@ -296,7 +296,7 @@ The information about the additional optional arguments used in the command line
 Supplementary data
 ==================
 
-1. Accompanying supplementary file to the Bioinformatics 2015 paper "*CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads. Bioinformatics 2015*" can be found `here <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/supplementary_data.pdf>`_.
+1. Accompanying **supplementary file** to the Bioinformatics 2015 paper "*CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads. Bioinformatics 2015*" can be found `here <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/supplementary_data.pdf>`_.
 
 2. **Test data:**
 
@@ -311,7 +311,7 @@ Supplementary data
 
       `Bacterial I <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/bacterial1/bacterial1.tar.gz>`_ - dataset I Bacterial sequences (full dataset) used in the paper.
 
-       `Bacterial II <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/bacterial2/bacterial2.tar.gz>`_ - dataset II Bacterial sequences (full dataset) used in the paper. 
+      `Bacterial II <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/bacterial2/bacterial2.tar.gz>`_ - dataset II Bacterial sequences (full dataset) used in the paper. 
 
 
 ====================
