@@ -318,7 +318,7 @@ Supplementary data
 Uninstall ``cssscl`` 
 ====================
 
-**Note:** this will only work if you installed ``cssscl`` with the cmd ``sudo pip install .`` as shown in the Installation section above. 
+**Note:** this will only work if you installed ``cssscl`` with the cmd ``sudo pip install .`` as shown in the **Installation** section above. 
           
  .. code-block:: bash 
 
