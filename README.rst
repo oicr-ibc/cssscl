@@ -19,11 +19,13 @@ This is important for us since obtaining grants is one significant way to fund p
 Tested environments 
 ====================
 
-| Distributor ID: Debian/Ubuntu
-| Description: Debian GNU/Linux 8.1 (jessie) / Ubuntu 12.04.3 LTS 
-| Release: 8.1 64-bit / 12.04 64-bit 
-Codename: jessie / precise
+   | Distributor ID: Debian/Ubuntu
+   | Description: Debian GNU/Linux 8.1 (jessie) / Ubuntu 12.04.3 LTS 
+   | Release: 8.1 64-bit / 12.04 64-bit 
+   | Codename: jessie / precise
 
+
+`Quick deployment and testing using Docker (small file) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-Docker>`_
 
 We have also setup two pre-build environments for the quick deployment and testing one uses docker and another a vm, for more information please see the instructions below. 
 
