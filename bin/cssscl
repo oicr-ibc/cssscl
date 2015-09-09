@@ -1,0 +1,106 @@
+#!/usr/bin/env python
+# Copyright 2015(c) The Ontario Institute for Cancer Research. All rights reserved.
+#
+# This program and the accompanying materials are made available under the
+# terms of the GNU Public License v3.0.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <http://www.gnu.org/licenses/>.
+
+import cssscl
+
+
+def configure_(args):
+    cssscl.configure.main(args)
+
+def build_dbs_(args):
+    cssscl.build_dbs.main(args)
+
+def classify_(args):
+    cssscl.classify.main(args)
+
+
+if __name__ == '__main__':
+   import argparse
+   import getpass
+
+   ### get version #####################################################
+   parser = argparse.ArgumentParser(description='Combining sequence similarity scores for biological sequence classification (cssscl)')
+   parser.add_argument('--version', action="version", version='cssscl {0}'.format(cssscl.__version__), help='show version and exit')
+   subparsers = parser.add_subparsers(title='Actions')
+
+
+   ### Configure #################################################################
+   configure_parser = subparsers.add_parser('configure',
+                                             formatter_class=argparse.RawDescriptionHelpFormatter,
+                                             description='MongoDB configuration for taxonomies\n\nExample\n\tcssscl configure',
+                                             help='Configure MongoDB for cssscl')
+   # MongoDB settings
+   mongo = configure_parser.add_argument_group('MongoDB Settings', 'Values set through the command-line will not be prompted for during setup')
+   mongo.add_argument('--host', metavar='h', default=None, help='MongoDB Server address (default localhost)')
+   mongo.add_argument('--port', metavar='p', default=None, help='Port used to connect to MongoDB (default Port [27017])')
+   mongo.add_argument('--database', metavar='db', default=None, help='Database name used by cssscl (default cssscl)')
+   #mongo.add_argument('--username', metavar='user', default=None, help='Set Username if needed')
+   #mongo.add_argument('--password', metavar='pass', default=None, help='Set Password')
+   # Logging Options
+   verbose_debug = configure_parser.add_mutually_exclusive_group()
+   verbose_debug.add_argument('-q', '--quiet', action='store_const', dest='logging', const="WARNING", default='INFO', help='Set logging output to ERROR')
+   verbose_debug.add_argument('-d', '--debug', action='store_const', dest='logging', const="DEBUG", default='INFO', help='Set logging output to DEBUG')
+    # AutoRun
+   configure_parser.set_defaults(func=configure_)
+
+
+   ### build the database from the trainig set in the FASTA format ########################################################                                         
+   build_dbs_parser = subparsers.add_parser('build_dbs',
+                                            formatter_class=argparse.RawDescriptionHelpFormatter,
+                                            description='Build databases from the training set\n\nExample:\n\tcssscl build_dbs file.fasta taxon_directory',
+                                            help='Build databases using the training set')
+   build_dbs_parser.add_argument('file_fasta', help='Training data in the FASTA format')
+   build_dbs_parser.add_argument('taxon_directory', help='Taxonomy data directory')
+   build_dbs_parser.add_argument('-fa','--fastatype', choices=['nucl'], default='nucl', help='Specify the sequence type of the FASTA file (default = nucl)')
+   build_dbs_parser.add_argument('-kmin','--kmer_min', default=int(2), help='Specify the minimum k-mer value (default = 2)') 
+   build_dbs_parser.add_argument('-btax','--build_taxonomy_data', action='store_true', default=False, help='Build (or rebuild) the taxonomy data (e.g. when initializing the database or updating the taxon information) (default = False)')
+   build_dbs_parser.add_argument('-c','--use_compression', action='store_true', default=False, help='Build the compresson db (default = False)')
+   build_dbs_parser.add_argument('-blast', '--use_blast', action='store_true', default=False, help='Build the BLAST db (default = False)')
+   build_dbs_parser.add_argument('-dbs_dir','--dbs_directory', default=str(), help='Specify the directory for outputting dbs.')
+   build_dbs_parser.add_argument('-nt', '--number_threads', default=int(1), help='Specify the number of threads to be used (default = 1 CPU)')
+   build_dbs_parser.add_argument('-kmeroff','--disable_kmer_count', action='store_true', default=False, help='Do not build the kmer counts db (default = False)')
+   ## Logging Options
+   verbose_debug = build_dbs_parser.add_mutually_exclusive_group()
+   verbose_debug.add_argument('-q', '--quiet', action='store_const', dest='logging', const="WARNING", default='INFO', help='Set logging output to WARNING')
+   verbose_debug.add_argument('-d', '--debug', action='store_const', dest='logging', const="DEBUG", default='INFO', help='Set logging output to DEBUG')
+   ##AutoRun
+   build_dbs_parser.set_defaults(func=build_dbs_)
+
+   ### classify reads using a training set 
+   classify_parser = subparsers.add_parser('classify',
+                                            formatter_class=argparse.RawDescriptionHelpFormatter,
+                                            description='Classify reads in the test set \n\nExample:\n\tcssscl classify file.fasta db_directory',
+                                            help='Classify sequences using a database built with the training set')
+   classify_parser.add_argument('filefasta', help='test data with sequences in the FASTA format for classification')
+   classify_parser.add_argument('dbdirectory', help='the directory where the databases built using the training set resides')
+   classify_parser.add_argument('-tax','--taxonRank', choices=['phylum', 'class', 'order', 'family', 'genus', 'species'], default='phylum', help='Specify the taxon rank for classification (default = phylum)') 
+   classify_parser.add_argument('-fa', '--fastatype', choices=['nucl'], default='nucl', help='Specify the sequence type of the FASTA file (default = nucl)') 
+   classify_parser.add_argument('-kmin', '--kmer_min', default=int(2), help='Specify the minimum k-mer value (default = 2)')
+   classify_parser.add_argument('-blast', '--use_blast', choices=['blastn', 'megablast'], default=False, help='Use the blast similarity measure (default = blastn)')
+   classify_parser.add_argument('-num_alignments', default=int(250), help='Blast parameter: number of database sequences to show alignments for, default = 250')
+   classify_parser.add_argument('-c', '--use_compression', action='store_true', default=False, help='Use the compression similarity measure (default = False)')
+   classify_parser.add_argument('-nt', '--number_threads', default=int(1), help='Specify the number of threads to be used (default = 1)')
+   classify_parser.add_argument('-minacc','--min_accu_threshold', default=float(0.4), help='Specify the minimum classification accuracy threshold for similarity measure selection (default = 0.4)')
+   classify_parser.add_argument('-o','--output_file', default=str(), help='Specify the name for the output file')
+   classify_parser.add_argument('-kmeroff','--disable_kmer_count', action='store_true', default=False, help='Turn off k-mer counts based measures (default = False)')
+   ## Carry kmer optimization 
+   kmer_optimization = classify_parser.add_mutually_exclusive_group()
+   kmer_optimization.add_argument('-opt', '--optimize', action='store_true', default=False, help='Find the optimum k-mer value and estimate the accuracy of predictions (default = False)')
+   kmer_optimization.add_argument('-kmer','--specify_kmer', default=False, help='Specify the optimum k-mer value')
+   ## Logging Options
+   verbose_debug = classify_parser.add_mutually_exclusive_group()
+   verbose_debug.add_argument('-q', '--quiet', action='store_const', dest='logging', const="WARNING", default='INFO', help='Set logging output to WARNING')
+   verbose_debug.add_argument('-d', '--debug', action='store_const', dest='logging', const="DEBUG", default='INFO', help='Set logging output to DEBUG')
+   ##AutoRun
+   classify_parser.set_defaults(func=classify_)
+
+   ### Run ###
+   args = parser.parse_args()
+   args.logging = cssscl.log(args)
+   args.func(args)
