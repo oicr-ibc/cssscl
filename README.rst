@@ -13,7 +13,7 @@ About:
 
 Downloading and using `cssscl`` is free, if you use ``cssscl`` or its code in your work please acknowledge ``cssscl`` by citing Borozan I, Ferretti V. "*CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads. Bioinformatics 2015.*"
 
-This is important for us since obtaining grants is one significant way to fund planning and implementation for our project. Also if you find cssscl useful in your research feel free to let us know.  
+This is important for us since obtaining grants is one significant way to fund planning and implementation for our project. Also if you find ``cssscl`` useful in your research feel free to let us know.  
 
 
 Tested environments 
@@ -97,7 +97,7 @@ To install the cssscl package you have two options:
 
 **Option A**
 
-Install the ``cssscl`` package using the **Python's Virtual Environment** tool to keep the dependencies required by the cssscl package in a separate directory and to keep your global python dist- or site-packages directory clean and manageable as shown below:
+Install the ``cssscl`` package using the **Python's Virtual Environment** tool to keep the dependencies required by the ``cssscl`` package in a separate directory and to keep your global python dist- or site-packages directory clean and manageable as shown below:
 
 1. Download the cssscl package
 
@@ -110,7 +110,7 @@ Install the ``cssscl`` package using the **Python's Virtual Environment** tool t
      $ git clone git@github.com:oicr-ibc/cssscl.git
 
 
-2. Check that all packages necessary to run the cssscl are installed and are available by running the ``cssscl_check_pre_installation.sh`` script (only for Ubuntu/Debian distributions). 
+2. Check that all packages necessary to run the ``cssscl`` are installed and are available by running the ``cssscl_check_pre_installation.sh`` script (only for Ubuntu/Debian distributions). 
 
   .. code-block:: bash 
     
@@ -119,7 +119,7 @@ Install the ``cssscl`` package using the **Python's Virtual Environment** tool t
 
 **Note:** for more information regarding the ``cssscl_check_pre_installation.sh`` script please see `here <https://github.com/oicr-ibc/cssscl/wiki/cssscl_check_pre_installation>`_.
 
-3. Create a virtual environment for the ``cssscl`` program (e.g. name it 'csssclvenv')
+3. Create a virtual environment for the ``cssscl`` program (e.g. name it ``csssclvenv``)
 
   .. code-block:: bash 
  
@@ -133,16 +133,16 @@ Install the ``cssscl`` package using the **Python's Virtual Environment** tool t
      $ source csssclvenv/bin/activate
 
 
-5. Now INSTALL cssscl as root 
+5. Install ``cssscl`` as root 
 
   .. code-block:: bash 
 
      $ sudo pip install .
     
-**Note:** this will install all the python modules necessary for running the ``cssscl`` package in the 'cssscl/csssclvenv/' directory. 
+**Note:** this will install all the python modules necessary for running the ``cssscl`` package in the ``cssscl/csssclvenv/`` directory. 
 
 
-6. Configure cssscl
+6. Configure ``cssscl``
 
  .. code-block:: bash 
 
@@ -152,7 +152,7 @@ Install the ``cssscl`` package using the **Python's Virtual Environment** tool t
 Accept all the values prompted by default by pressing [ENTER]  
 
 
-**Note:** If you are done working in the virtual environment, you can deactivate it as shown below. If you would like to run the ``cssscl`` program again (and you have deactivated python virtual environment) you will need to activate it again. 
+**Note:** If you are done working in the virtual environment, you can deactivate it as shown below. If you would like to run the ``cssscl`` program again (and you have deactivated the python virtual environment) you will need to activate it again. 
 
   .. code-block:: bash 
 
@@ -173,7 +173,7 @@ Install the ``cssscl`` package directly to your python global dist- or site-pack
      # or use git clone  
      $ git clone git@github.com:oicr-ibc/cssscl.git
 
-2. Check that all packages necessary to run the cssscl are installed and are avaialble by running the ``cssscl_check_pre_installation.sh`` script 
+2. Check that all packages necessary to run the ``cssscl`` are installed and are avaialble by running the ``cssscl_check_pre_installation.sh`` script (only for Ubuntu/Debian distributions). 
 	      
    .. code-block:: bash 
 
@@ -183,7 +183,7 @@ Install the ``cssscl`` package directly to your python global dist- or site-pack
 **Note:** for more information regarding the ``cssscl_check_pre_installation.sh`` script please see `here <https://github.com/oicr-ibc/cssscl/wiki/cssscl_check_pre_installation>`_.
 
 
-3. INSTALL ``cssscl`` as root  
+3. Install ``cssscl`` as root  
 
    .. code-block:: 
    
@@ -192,7 +192,7 @@ Install the ``cssscl`` package directly to your python global dist- or site-pack
 
 4. Configure ``cssscl`` 
 
- .. code-block:: bash 
+   .. code-block:: bash 
 
      $ cssscl configure 
 
@@ -220,48 +220,47 @@ Download test/train data:
      $ tar -zxvf test_data.tar.gz
 
 
-**To run the ``cssscl`` classifier follow the setps 1 and 2 (without the optimization step) or 1 and 3 (with the optimization step) as presented below:**
+**To run the** ``cssscl`` **classifier follow the setps 1 and 2 (without the optimization step) or 1 and 3 (with the optimization step) as presented below:**
 
-**1. Build the necessary databases from the training set:**
+1. Build the necessary databases from the training set:
 
  .. code-block:: bash 
-    
+     
      $ cssscl build_dbs -btax -c -blast -nt 2 PATH_TO/test_data/TRAIN.fa PATH_TO/taxon/
 
 (the whole process should take ~ 37 min using 2 CPUs)
 
-By default all databases will be outputted to the directory where the TRAIN.fa resides (note that all paths provided in the examples above are using absolute/full paths to the files/directories). The above command will build three databases (blast, compression and the kmer db) for sequences in the training set.
+By default all databases will be outputted to the directory where the TRAIN.fa resides (note that all paths provided in the examples above are using absolute/full paths to the files/directories). The above command will build three databases (blast, compression and the kmer database) for sequences in the training set.
 
-The cssscl's ``build_dbs`` module requires two positional arguments to be provided: 
+The ``cssscl`` 's ``build_dbs`` module requires two positional arguments to be provided: 
 
       | i. a **file** in the fasta format (e.g. TRAIN.fa as in the example above) that specifies the collection of reference genomes composing the training set.
       |
       | ii. a **directory** (taxon/ in the example above) that specifies the location where the taxon data is stored (more specifically the directory should contain the following files: gi_taxid_nucl.dmp, names.dmp and nodes.dmp, these files can be downloaded from the NCBI taxonomy database at ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/).
 
+The information about the additional optional arguments used in the command line above is provided `here <https://github.com/oicr-ibc/cssscl/wiki/build_dbs>`_.
 
-The information about the additional optional arguments used in the command line above is provided `here <https://github.com/oicr-ibc/cssscl/wiki/build_dbs>`_
-
-
-For more information please consult the cssscl's ``build_dbs`` help page by typing:
+For more information please consult the ``cssscl`` 's ``build_dbs`` help page by typing:
 
  .. code-block:: bash 
 
       $ cssscl build_dbs --help
 
 
-**2. Perform the classification using the test set:**
+2. Perform the classification using the test set without the optimization:
 
 **Note**: For the test set data provided above the values of the parameters used in the model have already been optimized and are included as part of the test set data (see the optimum_kmer directory in the test_set/ directory provided). Thus for the test dataset the optimization is not required to be performed prior to running the classifier. On how to run the classifier by performing the optimization stage first please see the step 3 below. 
 
  .. code-block:: bash 
 
+      # use cssscl to classify sequences in TEST.fa 
       $ cssscl classify -c -blast blastn -tax genus -nt 2 PATH_TO/test_data/test/TEST.fa PATH_TO/test_data/
  
 (the whole process should take ~ 29 min using 2 CPUs)
 
 Note that in the above example the output file ``cssscl_results_genus.txt`` with classification results will be located in the directory where the TEST.fa resides. 
 
-The cssscl's ``classify`` module requires two positional arguments to be provided: 
+The ``cssscl`` 's ``classify`` module requires two positional arguments to be provided: 
 
       | 1. a **file** with test data with sequences in the FASTA format for classification (e.g. TEST.fa as in the example above)
       |
@@ -271,17 +270,17 @@ The cssscl's ``classify`` module requires two positional arguments to be provide
 This will run the classifier with all the similarity measures (including the compression and the blast measure) described in:  Borozan I, Watt S, Ferretti V. "*Integrating alignment-based and alignment-free sequence similarity measures for biological sequence classification.*"  Bioinformatics. 2015 Jan 7. pii: btv006.
 
 
-The information about the additional optional arguments used in the command line above is provided `here <https://github.com/oicr-ibc/cssscl/wiki/classify>`_
+The information about the additional optional arguments used in the command line above is provided `here <https://github.com/oicr-ibc/cssscl/wiki/classify>`_.
 
 
-For more information please consult the cssscl's ``classify`` help page by typing 
+For more information please consult the ``cssscl`` 's ``classify`` help page by typing 
 
  .. code-block:: bash 
 
       $ cssscl classify --help 
 
 
-**3. Perform the classification by optimizing the cssscl's parameter values first:**
+3. Perform the classification by optimizing the ``cssscl`` 's parameter values first:
 
 **Note:** Prior to performing the classification the module finds optimum values for its parameters (such as the optimum k-mer size and removes sequence similarity measures with the low predictive power (Borozan et al., Bioinformatics. 2015 Jan 7. pii: btv006) based on the information obtained from the sequences in the training set, and provides an estimate of the overall accuracy with which sequences are to be classified using a leave-one-out cross-validation procedure. 
 
@@ -290,10 +289,9 @@ For more information please consult the cssscl's ``classify`` help page by typin
 
       $ cssscl classify -c -blast blastn -opt -tax genus -nt 8 PATH_TO/test_data/test/TEST.fa PATH_TO/test_data/
 
-Note that the optimization phase will take considerably longer when -c (compression) argument is used as mentioned in the section below **Note regarding the compression measure**.
+Note that the optimization phase will take considerably longer when ``-c`` (compression) argument is used as mentioned in the section **Note regarding the compression measure** below.
 
-    
-The information about the additional optional arguments used in the command line above is provided `here <https://github.com/oicr-ibc/cssscl/wiki/classify_opt>`_
+The information about the additional optional arguments used in the command line above is provided `here <https://github.com/oicr-ibc/cssscl/wiki/classify_opt>`_.
 
 
 ==================
