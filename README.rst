@@ -29,9 +29,9 @@ Tested environments
 **We have setup tree ways for installing and testing the** ``cssscl`` **package:**
 
 
-1. `Quick deployment and testing using Docker (small file) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-Docker>`_
+1. `Quick deployment and testing using Docker (small file) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-Docker>`_.
 
-2. `Quick deployment and testing using a VM (large file ~ 5GB) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-a-VM>`_
+2. `Quick deployment and testing using a VM (large file ~ 5GB) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-a-VM>`_.
 
 3. For system wide installation and testing please see the instrictions provided below.
 
@@ -114,7 +114,7 @@ Install the ``cssscl`` package using the **Python's Virtual Environment** tool t
      $ cd cssscl
      $ ./cssscl_check_pre_installation.sh
 
-**Note:** for more information regarding the ``cssscl_check_pre_installation.sh`` script please see `here <https://github.com/oicr-ibc/cssscl/wiki/cssscl_check_pre_installation>`_.
+**Note:** for more information regarding the ``cssscl_check_pre_installation.sh`` script see `here <https://github.com/oicr-ibc/cssscl/wiki/cssscl_check_pre_installation>`_.
 
 3. In the ``cssscl``  ``directory`` create a virtual environment (e.g. name it ``csssclvenv``)
 
@@ -123,7 +123,7 @@ Install the ``cssscl`` package using the **Python's Virtual Environment** tool t
      $ virtualenv csssclvenv
 
 
-4. To begin using the virtual environment, it first needs to be activated:
+4. To begin using the virtual environment, it first needs to be **activated**:
 
   .. code-block:: bash 
 
@@ -155,7 +155,7 @@ Accept all the values prompted by default by pressing [ENTER]
 
      $ deactivate
 
-If you would like to run the ``cssscl`` program again (and you have deactivated the python virtual environment) you will need to activate it again. 
+If you would like to run the ``cssscl`` program again (and you have deactivated the python virtual environment) you will need to **activate** it again as shown above. 
 
 **Option B**
     
@@ -218,7 +218,7 @@ Download test/train data:
      $ tar -zxvf test_data.tar.gz
 
 
-To run the ``cssscl`` classifier follow the setps 1 and 2 (without the optimization step) or 1 and 3 (with the optimization step) as presented below:
+To run the ``cssscl`` classifier follow the steps 1 and 2 (without the optimization) or 1 and 3 (with the optimization) as presented below:
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **1. Build the necessary databases from the training set:**
@@ -239,7 +239,7 @@ The ``cssscl's`` ``build_dbs`` module requires two positional arguments to be pr
 
 The information about the additional optional arguments used in the command line above is provided `here <https://github.com/oicr-ibc/cssscl/wiki/build_dbs>`_.
 
-For more information please consult the ``cssscl`` 's ``build_dbs`` help page by typing:
+For more information please consult the ``cssscl's``  ``build_dbs`` help page by typing:
 
  .. code-block:: bash 
 
@@ -257,7 +257,7 @@ For more information please consult the ``cssscl`` 's ``build_dbs`` help page by
 
 Note that in the above example the output file ``cssscl_results_genus.txt`` with classification results will be located in the directory where the TEST.fa resides. 
 
-**Note**: For the test set data provided above the values of the parameters used in the model have already been optimized and are included as part of the test set data (see the optimum_kmer directory in the test_set/ directory provided). Thus for the test dataset the optimization is not required to be performed prior to running the classifier. On how to run the classifier by performing the optimization stage first please see the step 3 below. 
+**Note**: For the test set data provided above the values of the parameters used in the model have already been optimized and are included as part of the test set (see the ``optimum_kmer`` directory in the ``test_set/`` directory `provided <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/taxon.tar.gz>`_ ). Thus for the test dataset the optimization is not required to be performed prior to running the classifier. On how to run the classifier by performing the optimization stage first please see the step 3 below. 
 
 The ``cssscl's``  ``classify`` module requires two positional arguments to be provided: 
 
@@ -266,7 +266,7 @@ The ``cssscl's``  ``classify`` module requires two positional arguments to be pr
       | 2. a **directory** where the databases (built using the training set) reside
 
 
-This will run the classifier with all the similarity measures (including the compression and the blast measure) described in:  Borozan I, Watt S, Ferretti V. "*Integrating alignment-based and alignment-free sequence similarity measures for biological sequence classification.*"  Bioinformatics. 2015 Jan 7. pii: btv006.
+**Note**: This will run the classifier with all the similarity measures (including the compression and the blast measure) as described in:  Borozan I et al. "*Integrating alignment-based and alignment-free sequence similarity measures for biological sequence classification.*"  Bioinformatics. 2015 Jan 7. pii: btv006.
 
 
 The information about the additional optional arguments used in the command line above is provided `here <https://github.com/oicr-ibc/cssscl/wiki/classify>`_.
