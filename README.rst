@@ -52,9 +52,207 @@ In order to compile cssscl on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the foll
 **Note:** If you are testing cssscl using a VM please make sure that you have at least 1024 MB of RAM.
 
 
-============================================================================
-Pre-build environments (docker and VM) for the quick deployment and testing 
-============================================================================
+===============================================================================
+Docker: pre-build environment for the quick deployment and testing (small file)
+===============================================================================
+
+We have setup a Dockerfile to create an image and a container that runs ubuntu 12.04 provisioned with Python 2.7.3, MongoDB, BLAST, plzip, jellyfish and the cssscl program for the quick deployment and testing.
+
+Procedure:
+
+| a. Make sure that you have Docker installed on your system.
+|    On how to install Docker on your system please consult the docker installation guide `here <https://docs.docker.com/installation/>`_
+| b. Download the `ubuntucsss.tar.gz https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/code_2xx/ubuntucsss.tar.gz>`_ file that contains the Dockerfile.
+| c. tar -zxvf ubuntucsss.tar.gz
+| d. To run the ``cssscl`` program follow the instructions below:
+
+
+**Use docker to run cssscl**
+
+1.  
+
+.. code-block:: bash 
+
+   # cd to the ubuntucsss dir
+   $ cd ./ubuntucsss   
+
+2. Build the docker image using the Dockerfile located in the ubuntucss directory as shown below
+
+.. code-block:: bash 
+
+    $ docker build -t cssscl/ubuntucsss .
+
+3. Now use the docker image cssscl/ubuntucsss to create and run a container:
+
+.. code-block:: bash 
+   
+    $ docker run -ti cssscl/ubuntucsss /bin/bash       
+
+Note: you could setup any number of cpus for the container to use as shown below:
+
+.. code-block:: bash 
+    
+    $ docker run -ti --cpuset-cpus="0-7" cssscl/ubuntucsss /bin/bash       
+    
+this will run the container with 8 cpus)
+
+4. Inside the running container start the mongo database as shown below:
+
+.. code-block:: bash 
+    
+    $ mongod --fork --logpath /data/db/log
+
+
+5. Configure cssscl :
+
+.. code-block:: bash 
+
+    $ cssscl configure 
+
+
+Accept all the values prompted by default by pressing [ENTER]  
+ 
+Run the cssscl classifier:: 
+
+6. build the necessary databases from the training set:
+
+.. code-block:: bash 
+
+    $ cssscl build_dbs -btax -c -blast -nt 2 /home/test_data/TRAIN.fa /home/taxon/
+
+(the whole process should take ~ 37 min using 2 CPUs)
+
+By default all databases will be outputted to the ``dir`` where the train.fa resides (note that all paths provided need to be absolute/full paths to the files/directories).
+
+For more information about the cssscl ``build_dbs`` please consult its help page by typing:
+
+
+.. code-block:: bash 
+
+    $ cssscl build_dbs --help
+
+
+For more information about cssscl please read the INSTALL.rst provided with this package.
+
+
+7. Perform the classification using the CSSSCL model:
+
+Note that for the test set data the parameters of the model have already been optimized and are included as part of the test set data, thus optimization is not required to be performed prior to running the classifier.
+
+.. code-block:: bash 
+
+    $ cssscl classify -c -blast blastn -tax genus -nt 2 /home/test_data/test/TEST.fa /home/test_data/
+
+(the whole process should take ~ 29 min using 2 CPUs)
+
+Note that in the above example the output file 'cssscl_results_genus.txt' with classification results will be located in the directory where the TEST.fa resides. 
+
+This will run the classifier with all the similarity measures (including the compression and the blast measure) described in:  Borozan I, Watt S, Ferretti V. "Integrating alignment-based and alignment-free sequence similarity measures for biological sequence classification."  Bioinformatics. 2015 Jan 7. pii: btv006. 
+
+For more information about the cssscl ``classify`` please consult its help page by typing: 
+
+.. code-block:: bash 
+
+    $ cssscl classify --help 
+
+For more information about cssscl please read the INSTALL.rst provided with this package.
+
+
+
+==================================================================================
+VM: pre-build environment for the quick deployment and testing (large file ~ 5GB) 
+==================================================================================
+
+We have setup an OVF-formatted virtual machine (VM) running Ubuntu provisioned with Python 2.7.3 (including all the python modules), MongoDB, BLAST, plzip and jellyfish for the quick testing of the CSSSCL program. The VM also includes taxon and test data.
+
+Procedure
+
+| 1. Download the .ova file from `here <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/cssscl_opt.ova`_
+| 2. In Workstation, select File > Import appliance.
+| 3. Browse to the .ova file and click Open.
+| 4. Type a name for the virtual machine, type or browse to the directory for the virtual machine files, and click Import. Workstation performs OVF specification conformance and virtual hardware compliance checks. A status bar indicates the progress of the import process.
+| 5. If the import fails, click Retry to try again, or click Cancel to cancel the import.
+| If you retry the import, Workstation relaxes the OVF specification conformance and virtual hardware compliance checks and you might not be able to use the virtual machine in Workstation.
+| After Workstation successfully imports the OVF virtual machine, the virtual machine appears in the virtual machine library.
+| 6. Then to install and run ``cssscl`` by following the instructions below
+
+**Use a VM to run cssscl**
+
+First login to the VM::
+
+| precise64 login:vagrant
+| Password:vagrant
+
+
+1. Download the cssscl package code from and install the program 
+
+  .. code-block:: bash 
+    
+    # download the cssscl package
+    $ wget --no-check-certificate https://github.com/oicr-ibc/cssscl/archive/master.tar.gz
+    $ tar -zxvf master.tar.gz; mv cssscl-master cssscl 
+    $ cd cssscl/
+    # check the installation 
+    $ ./cssscl_check_pre_installation.sh
+    # for system wide installation:
+    $ sudo pip install .
+
+For more information about ``cssscl`` please read the REAME.rst or the INSTALL.rst provided with this package.
+
+
+2. Configure cssscl :
+
+  .. code-block:: bash 
+
+    $ cssscl configure 
+
+Accept all the values prompted by default by pressing [ENTER]  
+ 
+
+3. build the necessary databases from the training set:
+-------------------------------------------------------------
+
+  .. code-block:: bash 
+
+    $ cssscl build_dbs -btax -c -blast -nt 2 /home/vagrant/test_data/TRAIN.fa /home/vagrant/taxon/
+
+(the whole process should take ~ 37 min using 2 CPUs)
+
+By default all databases will be outputted to the DIR where the train.fa resides.
+
+For more information about the cssscl ``build_dbs`` please consult its help page by typing:
+
+  .. code-block:: bash 
+
+    $ cssscl build_dbs --help
+
+
+For more information about cssscl please read the REAME.rst or the INSTALL.rst provided with this package.
+
+
+4. Perform the classification using the CSSSCL model:
+
+Note that for the test set data the parameters of the model have already been optimized and are included as part of the test set data, thus optimization is not required to be performed prior to running the classifier.
+
+  .. code-block:: bash 
+
+    $ cssscl classify -c -blast blastn -tax genus -nt 2 /home/vagrant/test_data/test/TEST.fa /home/vagrant/test_data/
+
+
+(the whole process should take ~ 29 min using 2 CPUs)
+
+Note that in the above example the output file ``cssscl_results_genus.txt`` with classification results will be located in the directory where the TEST.fa resides. 
+
+This will run the classifier with all the similarity measures (including the compression and the blast measure) described in:  Borozan I, Watt S, Ferretti V. "Integrating alignment-based and alignment-free sequence similarity measures for biological sequence classification."  Bioinformatics. 2015 Jan 7. pii: btv006. 
+
+For more information about the cssscl ``classify`` please consult its help page by typing: 
+
+  .. code-block:: bash 
+
+    $ cssscl classify --help 
+
+
+For more information about cssscl please read the INSTALL.rst provided with this package.
 
 =======================================================================================
 Installation (with automated installation of third party software on Ubuntu and Debian)
@@ -101,7 +299,7 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
      # or use git clone  
      $ git clone git@github.com:oicr-ibc/cssscl.git
 
-2. Check that all packages necessary to run the cssscl are installed and are available by running the cssscl_check_pre_installation.sh script 
+2. Check that all packages necessary to run the cssscl are installed and are available by running the **cssscl_check_pre_installation.sh** script 
 
   .. code-block:: bash 
     
@@ -131,7 +329,7 @@ Install the cssscl package using the **Python's Virtual Environment** tool to ke
 **Note:** this will install all the python modules necessary for running the cssscl package in the 'cssscl/csssclvenv/' directory. 
 
 
-6. Configure mongodb
+6. Configure cssscl
 
  .. code-block:: bash 
 
@@ -174,7 +372,7 @@ Install the cssscl package directly to your python global dist- or site-packages
      $ sudo pip install .        
 
 
-4. Configure mongodb
+4. Configure cssscl 
 
  .. code-block:: bash 
 
@@ -335,6 +533,27 @@ The additional optional arguments used above have the following meaning:
                         of predictions (default = False)
 
 
+==================
+Supplementary data
+==================
+
+Accompanying supplementary file to the Bioinformatics 2015 paper "*CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads. Bioinformatics 2015.*" `supplementary_data.pdf <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/supplementary_data.pdf>`_.
+
+**Test data:**
+
+Genome sequences: `test data <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/test_data.tar.gz>`_
+
+Taxon Data: `Taxon <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/taxon.tar.gz>`_
+
+
+**Links to the three full datasets used to generate the results presented in Table 1 on pg.2 of the manuscript are shown below**
+
+`Viral <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/viral/train_test_viral_full_data.tar.gz>`_ - Viral sequences (full dataset) used in the paper.
+
+`Bacterial <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/bacterial1/bacterial1.tar.gz>`_ - dataset I Bacterial sequences (full dataset) used in the paper.
+
+`Bacterial <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/bacterial2/bacterial2.tar.gz>`_ - dataset II Bacterial sequences (full dataset) used in the paper. 
+
 
 ======================================
 Note regarding the compression measure
@@ -487,25 +706,6 @@ In order to complete the installation of the packages, you need to update the so
      $ apt-get update 
      $ apt-get install mongodb-10gen=2.4.14
 
-
-==================
-Supplementary data
-==================
-
-`supplementary_data.pdf <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/supplementary_data.pdf>`_
-
-**Test data:**
-
-Genome sequences: `test data <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/test_data.tar.gz>`_
-
-Taxon Data: `Taxon <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/taxon.tar.gz>`_
-
-
-**Links to the three full datasets used to generate the results presented in Table 1 on pg.2 of the manuscript are shown below**
-
-`Viral <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/viral/train_test_viral_full_data.tar.gz>`_ - Viral sequences (full dataset) used in the paper.
-`Bacterial <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/bacterial1/bacterial1.tar.gz>`_ - dataset I Bacterial sequences (full dataset) used in the paper.
-Bacterial - dataset II Bacterial sequences (full dataset) used in the paper. 
 
 
 =====================
