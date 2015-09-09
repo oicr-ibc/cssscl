@@ -25,6 +25,8 @@ Tested environments
 | Codename: jessie / precise
 
 
+We have also setup two pre-build environments for the quick deployment and testing one uses docker and another a vm, for more information please see the instructions below. 
+
 
 Getting started: 
 ================
@@ -52,9 +54,9 @@ In order to compile cssscl on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the foll
 **Note:** If you are testing cssscl using a VM please make sure that you have at least 1024 MB of RAM.
 
 
-===============================================================================
-Docker: pre-build environment for the quick deployment and testing (small file)
-===============================================================================
+======================================================
+Quick deployment and testing using Docker (small file)
+======================================================
 
 We have setup a Dockerfile to create an image and a container that runs ubuntu 12.04 provisioned with Python 2.7.3, MongoDB, BLAST, plzip, jellyfish and the cssscl program for the quick deployment and testing.
 
@@ -65,13 +67,11 @@ We have setup a Dockerfile to create an image and a container that runs ubuntu 1
 | b. Download the `ubuntucsss.tar.gz <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/code_2xx/ubuntucsss.tar.gz>`_ 
      file that contains the Dockerfile.
 | c. tar -zxvf ubuntucsss.tar.gz
-| d. To run the ``cssscl`` program follow the instructions below:
-
+d. To run the ``cssscl`` program follow the instructions below:
 
 **Use docker to run cssscl**
 
 1.  cd to the ubuntucsss dir
-
 .. code-block:: bash 
 
    # cd to the ubuntucsss dir
@@ -161,10 +161,9 @@ For more information about the cssscl ``classify`` please consult its help page 
 For more information about cssscl please read the README.rst or the INSTALL.rst provided with this package.
 
 
-
-==================================================================================
-VM: pre-build environment for the quick deployment and testing (large file ~ 5GB) 
-==================================================================================
+========================================================
+Quick deployment and testing using VM (large file ~ 5GB)
+========================================================
 
 We have setup an OVF-formatted virtual machine (VM) running Ubuntu provisioned with Python 2.7.3 (including all the python modules), MongoDB, BLAST, plzip and jellyfish for the quick testing of the CSSSCL program. The VM also includes taxon and test data.
 
@@ -177,10 +176,9 @@ We have setup an OVF-formatted virtual machine (VM) running Ubuntu provisioned w
 | 5. If the import fails, click Retry to try again, or click Cancel to cancel the import.
 | If you retry the import, Workstation relaxes the OVF specification conformance and virtual hardware compliance checks and you might not be able to use the virtual machine in Workstation.
 | After Workstation successfully imports the OVF virtual machine, the virtual machine appears in the virtual machine library.
-6. Then to install and run ``cssscl`` by following the instructions below
+6. Then to install and run ``cssscl`` follow the instructions below
 
-
-**Use a VM to run cssscl**
+**Run cssscl on a VM**
 
 First login to the VM
 
