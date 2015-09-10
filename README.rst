@@ -441,7 +441,7 @@ For more information please consult the ``cssscl's``  ``build_dbs`` help page by
       $ cssscl build_dbs --help
 
 
-2. Perform the classification the test test set
+2. Perform the classification of sequences in the test set 
 
  .. code-block:: bash 
 
