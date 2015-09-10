@@ -33,7 +33,7 @@ Tested environments
 
 2. `Quick deployment using a VM (large file ~ 5GB) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-the-Oracle-VirtualBox-VM>`_.
 
-3. `System wide installation from the source code (see installation instructions below) <https://github.com/oicr-ibc/cssscl#installation-guide>`_.
+3. `System wide installation from the source code (see the Installation Guide below) <https://github.com/oicr-ibc/cssscl#installation-guide>`_.
 
 
 
@@ -96,8 +96,13 @@ In order to compile ``cssscl`` on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the 
      # use wget 
      $ wget --no-check-certificate https://github.com/oicr-ibc/cssscl/archive/master.tar.gz
      $ tar -zxvf master.tar.gz; mv cssscl-master cssscl 
-     # or use git clone  
-     $ git clone git@github.com:oicr-ibc/cssscl.git
+     
+or use git clone, note that ``sudo apt-get install git`` is required for git access
+     
+  ..  code-block:: bash  
+     
+     # use git clone 
+     $ git clone https://github.com/oicr-ibc/cssscl.git
 
 
 *Step 3*. Check that all packages necessary to run the ``cssscl`` are installed and are available by running the ``cssscl_check_pre_installation.sh`` script (only for Ubuntu/Debian distributions). 
@@ -106,6 +111,8 @@ In order to compile ``cssscl`` on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the 
     
      $ cd cssscl
      $ ./cssscl_check_pre_installation.sh
+
+**Note:** when prompted follow instructions to export when ``source cssscl/scripts/export.sh`` shows on the screen.
 
 **Note:** for more information regarding the ``cssscl_check_pre_installation.sh`` script see `here <https://github.com/oicr-ibc/cssscl/wiki/cssscl_check_pre_installation>`_.
 
