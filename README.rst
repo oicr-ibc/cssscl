@@ -26,14 +26,14 @@ Tested environments
    | Codename: jessie / precise
 
 
-**We have setup tree ways for installing and testing the** ``cssscl`` **package:**
+**We have setup tree ways for installing the** ``cssscl`` **package:**
 
 
 1. `Quick deployment using Docker (small file) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-Docker>`_.
 
 2. `Quick deployment using a VM (large file ~ 5GB) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-a-VM>`_.
 
-3. System wide installation using the source code (see installation instructions below).
+3. System wide installation from the source code (see installation instructions below).
 
 
 
@@ -47,7 +47,7 @@ Getting started
 
 
 ============
-Installation
+Installation Guide
 ============
 
 
