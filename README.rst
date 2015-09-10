@@ -11,9 +11,9 @@ About:
 
 **CSSSCL** is a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short reads.
 
-Downloading and using ``cssscl`` is free. If you use ``cssscl`` or its code in your work, please acknowledge ``cssscl`` by citing Borozan I and Ferretti V. "*CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads. Bioinformatics 2015.*"
+.. Downloading and using ``cssscl`` is free. If you use ``cssscl`` or its code in your work, please acknowledge ``cssscl`` by citing Borozan I and Ferretti V. "*CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads. Bioinformatics 2015.*"
 
-This is important for us since obtaining grants is one significant way to fund planning and implementation for our project. Also if you find ``cssscl`` useful in your research feel free to let us know.  
+.. This is important for us since obtaining grants is one significant way to fund planning and implementation for our project. Also if you find ``cssscl`` useful in your research feel free to let us know.  
 
 
 Tested environments 
@@ -63,7 +63,7 @@ In order to compile ``cssscl`` on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the 
      $ sudo apt-get update
      $ sudo apt-get install build-essential g++ libxml2-dev libxslt-dev gfortran libopenblas-dev liblapack-dev
 
-see `Option A <https://github.com/oicr-ibc/cssscl#install-cssscl-option-a>`_ below
+**see** `Option A <https://github.com/oicr-ibc/cssscl#install-cssscl-option-a>`_ **below**
 
 **If you are not using the Python's Virtual Environment**
 
@@ -76,7 +76,7 @@ In order to compile ``cssscl`` on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the 
      $ sudo apt-get update
      $ sudo apt-get install build-essential python2.7 python2.7-dev g++ libxml2-dev libxslt-dev gfortran libopenblas-dev liblapack-dev
 
-see `Option B <https://github.com/oicr-ibc/cssscl#install-cssscl-option-b>`_ below
+**see** `Option B <https://github.com/oicr-ibc/cssscl#install-cssscl-option-b>`_ **below**
 
 
 Install ``cssscl`` Option A
@@ -240,7 +240,7 @@ Accept all the values prompted by default by pressing [ENTER]
 Additional instructions for non-automated installation of third party software necessary for running the ``cssscl`` package
 ---------------------------------------------------------------------------------------------------------------------------
 
-In case the **cssscl_check_pre_installation.sh** script (see the Installation section above) fails please read the info below for the installation of individual third party software:
+In case the **cssscl_check_pre_installation.sh** script (see the installation subsections above) fails please read the info below for the manual installation of individual third party software:
 
 Necessary Python modules: 
 
@@ -382,7 +382,7 @@ In order to complete the installation of the packages, you need to update the so
 Uninstall ``cssscl`` 
 ---------------------
 
-**Note:** this will only work if you installed cssscl with the cmd 'sudo pip install .' as shown in the Installation section above. 
+**Note:** this will only work if you installed cssscl with the cmd ``sudo pip install .`` as shown in the Installation section above. 
           
  .. code-block:: bash 
 
@@ -474,7 +474,7 @@ For more information please consult the ``cssscl's``  ``classify`` help page by 
       $ cssscl classify --help 
 
 
-Example 2 - Perform the classification by optimizing the ``cssscl's`` parameter values first
+Example 2 - perform the classification by optimizing the ``cssscl's`` parameter values first
 --------------------------------------------------------------------------------------------
 
 1. Build the necessary databases from the training set
