@@ -118,7 +118,7 @@ echo  "-------------------------------------------------------------------------
 echo  "| If you have either one of the following programs installed : blast, plzip, jellyfish or mongoDB                         |" 
 echo  "| that are not in your PATH you need to add them to your executable search PATH variable before you run this script       |"
 echo  '| for example : export PATH=$PATH:PATH_TO_YOUR_program                                                                    |'
-echo  "| for more details read the instructions in the INSTALL.rst file to continue press [ENTER] to exit press [n]                    |"
+echo  "| for more details read the instructions in the INSTALL.rst file to continue press [ENTER] to exit press [n]              |"
 echo  "---------------------------------------------------------------------------------------------------------------------------" 
 read warning
 if [ "$warning" == "" ]; then
