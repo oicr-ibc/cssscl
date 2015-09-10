@@ -6,7 +6,7 @@ CSSSCL: a taxonomic classifier for DNA sequences.
 **Author** Ivan Borozan 
 
 
-About:
+About
 ======
 
 **CSSSCL** is a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short reads.
@@ -80,7 +80,7 @@ We recommand to install the ``cssscl`` package using the **Python's Virtual Envi
      # e.g. PATH_TO_YOUR_plzip=/home/user_x/plzip-1.1/plzip
      $ export PATH=$PATH:PATH_TO_YOUR_plzip
 
-*Step 0*. Install dependencies on Debian and Ubuntu
+*Step 1*. Install dependencies on Debian and Ubuntu
 
 In order to compile ``cssscl`` on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the following packages need to be installed:
 
@@ -89,7 +89,7 @@ In order to compile ``cssscl`` on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the 
      $ sudo apt-get update
      $ sudo apt-get install build-essential g++ libxml2-dev libxslt-dev gfortran libopenblas-dev liblapack-dev
 
-*Step 1*. Download the ``cssscl`` package
+*Step 2*. Download the ``cssscl`` package
 
   .. code-block:: bash 
    
@@ -100,7 +100,7 @@ In order to compile ``cssscl`` on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the 
      $ git clone git@github.com:oicr-ibc/cssscl.git
 
 
-*Step 2*. Check that all packages necessary to run the ``cssscl`` are installed and are available by running the ``cssscl_check_pre_installation.sh`` script (only for Ubuntu/Debian distributions). 
+*Step 3*. Check that all packages necessary to run the ``cssscl`` are installed and are available by running the ``cssscl_check_pre_installation.sh`` script (only for Ubuntu/Debian distributions). 
 
   .. code-block:: bash 
     
@@ -109,21 +109,21 @@ In order to compile ``cssscl`` on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the 
 
 **Note:** for more information regarding the ``cssscl_check_pre_installation.sh`` script see `here <https://github.com/oicr-ibc/cssscl/wiki/cssscl_check_pre_installation>`_.
 
-*Step 3*. In the ``cssscl``  ``directory`` create a virtual environment (e.g. name it ``csssclvenv``)
+*Step 4*. In the ``cssscl``  ``directory`` create a virtual environment (e.g. name it ``csssclvenv``)
 
   .. code-block:: bash 
  
      $ virtualenv csssclvenv
 
 
-*Step 4*. To begin using the virtual environment, it first needs to be **activated**:
+*Step 5*. To begin using the virtual environment, it first needs to be **activated**:
 
   .. code-block:: bash 
 
      $ source csssclvenv/bin/activate
 
 
-*Step 5*. Install ``cssscl`` as root 
+*Step 6*. Install ``cssscl`` as root 
 
   .. code-block:: bash 
 
@@ -132,7 +132,7 @@ In order to compile ``cssscl`` on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the 
 **Note:** this will install all the python modules necessary for running the ``cssscl`` package in the ``cssscl/csssclvenv/`` directory. 
 
 
-*Step 6*. Configure ``cssscl``
+*Step 7*. Configure ``cssscl``
 
  .. code-block:: bash 
 
@@ -180,7 +180,7 @@ Install the ``cssscl`` package directly to your python global dist- or site-pack
      # e.g. PATH_TO_YOUR_plzip=/home/user_x/plzip-1.1/plzip
      $ export PATH=$PATH:PATH_TO_YOUR_plzip
      
-Step 0. Install dependencies on Debian and Ubuntu
+*Step 1*. Install dependencies on Debian and Ubuntu
 
 Python: Only Python 2.7.3+ is supported. No support for Python 3 at the moment.
 
@@ -191,7 +191,7 @@ In order to compile ``cssscl`` on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the 
      $ sudo apt-get update
      $ sudo apt-get install build-essential python2.7 python2.7-dev g++ libxml2-dev libxslt-dev gfortran libopenblas-dev liblapack-dev
        
-Step 1. Download the ``cssscl`` package 
+*Step 2*. Download the ``cssscl`` package 
    
    .. code-block:: bash 
 
@@ -201,7 +201,7 @@ Step 1. Download the ``cssscl`` package
      # or use git clone  
      $ git clone git@github.com:oicr-ibc/cssscl.git
 
-Step 2. Check that all packages necessary to run the ``cssscl`` are installed and are avaialble by running the ``cssscl_check_pre_installation.sh`` script (only for Ubuntu/Debian distributions). 
+*Step 3*. Check that all packages necessary to run the ``cssscl`` are installed and are avaialble by running the ``cssscl_check_pre_installation.sh`` script (only for Ubuntu/Debian distributions). 
 	      
    .. code-block:: bash 
 
@@ -211,14 +211,14 @@ Step 2. Check that all packages necessary to run the ``cssscl`` are installed an
 **Note:** for more information regarding the ``cssscl_check_pre_installation.sh`` script please see `here <https://github.com/oicr-ibc/cssscl/wiki/cssscl_check_pre_installation>`_.
 
 
-Step 3. Install ``cssscl`` as root  
+*Step 4*. Install ``cssscl`` as root  
 
    .. code-block:: 
    
      $ sudo pip install .        
 
 
-Step 4. Configure ``cssscl`` 
+*Step 5*. Configure ``cssscl`` 
 
    .. code-block:: bash 
 
@@ -279,13 +279,13 @@ http://download.savannah.gnu.org/releases/lzip/plzip/
 
 **To compile Plzip 1.1 and Lzlib 1.5:**
 
-1. Donwload lzlib-1.5.tar.gz 
+*Step 1*. Donwload lzlib-1.5.tar.gz 
 
 .. code-block:: bash 
 
      $ wget --no-check-certificate http://download.savannah.gnu.org/releases/lzip/lzlib/lzlib-1.5.tar.gz 
 
-2. Install lzlib-1.5:
+*Step 2*. Install lzlib-1.5:
 
 .. code-block:: bash 
 
@@ -297,13 +297,13 @@ http://download.savannah.gnu.org/releases/lzip/plzip/
      $ make install
 
 
-3. Donwload Plzip 1.1 
+*Step 3*. Donwload Plzip 1.1 
 
 .. code-block:: bash 
 
      $ wget --no-check-certificate  http://download.savannah.gnu.org/releases/lzip/plzip/plzip-1.1.tar.gz
 
-4. Install Plzip
+*Step 4*. Install Plzip
 
 .. code-block:: bash 
 
@@ -406,7 +406,7 @@ Download test/train data:
 Example 1 - run the ``cssscl`` classifier without the optimization using the taxon data and the test set provided
 -----------------------------------------------------------------------------------------------------------------
 
-1. Build the necessary databases from the training set
+*Step 1*. Build the necessary databases from the training set
 
  .. code-block:: bash 
      
@@ -431,7 +431,7 @@ For more information please consult the ``cssscl's``  ``build_dbs`` help page by
       $ cssscl build_dbs --help
 
 
-2. Perform the classification of the sequences in the test set
+*Step 2*. Perform the classification of the sequences in the test set
 
  .. code-block:: bash 
 
@@ -467,7 +467,7 @@ For more information please consult the ``cssscl's``  ``classify`` help page by 
 Example 2 - perform the classification by optimizing the ``cssscl's`` parameter values first
 --------------------------------------------------------------------------------------------
 
-1. Build the necessary databases from the training set
+*Step 1*. Build the necessary databases from the training set
 
 **Note**: Only do this is you did not already built the database in Example 1 above.
 
@@ -478,7 +478,7 @@ Example 2 - perform the classification by optimizing the ``cssscl's`` parameter 
 (the whole process should take ~ 37 min using 2 CPUs)
 
 
-2. Perform the classification of the sequences in the test set by optimizing the ``cssscl's`` parameter values first
+*Step 2*. Perform the classification of the sequences in the test set by optimizing the ``cssscl's`` parameter values first
 
  .. code-block:: bash 
 
