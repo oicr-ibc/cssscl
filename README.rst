@@ -33,7 +33,7 @@ Tested environments
 
 2. `Quick deployment and testing using a VM (large file ~ 5GB) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-a-VM>`_.
 
-3. For system wide installation and testing please see the instrictions provided below.
+3. For system wide installation and testing please see the instructions provided below.
 
 
 
