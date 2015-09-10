@@ -166,7 +166,7 @@ else
 	    echo "-----------------------------------------------------"
 	    echo "| The installation log file $pwd/log_install.txt indicates that :"
 	    echo "| ${installed_progs[*]} have been installed by this program in $pwd/src/bin but are not currently in the PATH."
-	    echo "| NOTE                                                                                    :"
+	    echo "| NOTE :"
 	    echo "| YOU NEED TO ADD $pwd/src/bin to YOUR PATH VARIABLE BY SOURCING THE SCRIPT AS SHOWN BELOW:"
             echo "---------------------------------"
             echo "  source $pwd/scripts/export.sh  "
