@@ -31,7 +31,7 @@ Tested environments
 
 1. `Quick deployment using Docker (small file) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-Docker>`_.
 
-2. `Quick deployment using a VM (large file ~ 5GB) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-a-VM>`_.
+2. `Quick deployment using a VM (large file ~ 5GB) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-the-Oracle-VM-VitrualBox>`_.
 
 3. System wide installation from the source code (see installation instructions below).
 
