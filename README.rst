@@ -333,11 +333,9 @@ http://www.nongnu.org/lzip/manual/plzip_manual.html#Memory-requirements
 
 **Install MongoDB**
 
+MongoDB should be installed using the following set of instructions:
+
 *Ubuntu*
-
-You will first need to install Mongodb (ignore mongodb installation if mongodb is already installed jump to 2. Set up cssscl):
-
-MongoDB should be installed using the following set of instructions (see also mongodb installation):
 
 First add the 10gen GPG key, the public gpg key used for signing these packages. It should be possible to import the key into apt's public keyring with a command like this:
 
