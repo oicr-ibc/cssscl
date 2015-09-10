@@ -343,7 +343,7 @@ First add the 10gen GPG key, the public gpg key used for signing these packages.
 
      $ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
 
-Add this line verbatim to your /etc/apt/sources.list:
+Add this line verbatim to your ``/etc/apt/sources.list``:
 
 .. code-block:: bash 
 
