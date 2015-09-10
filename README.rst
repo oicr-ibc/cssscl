@@ -11,7 +11,7 @@ About:
 
 **CSSSCL** is a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short reads.
 
-Downloading and using ``cssscl`` is free, if you use ``cssscl`` or its code in your work please acknowledge ``cssscl`` by citing Borozan I and Ferretti V. "*CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads. Bioinformatics 2015.*"
+Downloading and using ``cssscl`` is free. If you use ``cssscl`` or its code in your work, please acknowledge ``cssscl`` by citing Borozan I and Ferretti V. "*CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads. Bioinformatics 2015.*"
 
 This is important for us since obtaining grants is one significant way to fund planning and implementation for our project. Also if you find ``cssscl`` useful in your research feel free to let us know.  
 
@@ -29,11 +29,11 @@ Tested environments
 **We have setup tree ways for installing and testing the** ``cssscl`` **package:**
 
 
-1. `Quick deployment and testing using Docker (small file) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-Docker>`_.
+1. `Quick deployment using Docker (small file) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-Docker>`_.
 
-2. `Quick deployment and testing using a VM (large file ~ 5GB) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-a-VM>`_.
+2. `Quick deployment using a VM (large file ~ 5GB) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-a-VM>`_.
 
-3. For system wide installation and testing please see the instrictions provided below.
+3. System wide installation using the source code (see installation instructions below).
 
 
 
@@ -197,7 +197,7 @@ Install the ``cssscl`` package directly to your python global dist- or site-pack
 Accept all the values prompted by default by pressing [ENTER]  
 
 =====
-Usage
+User Guide
 =====
 
 **To test the classifier we have provided taxon and test data for you to download, as shown from the links provided below:**
@@ -218,10 +218,10 @@ Download test/train data:
      $ tar -zxvf test_data.tar.gz
 
 
-To run the ``cssscl`` classifier follow the steps 1 and 2 (without the optimization) or 1 and 3 (with the optimization) as presented below:
+To run the ``cssscl`` classifier, follow the steps 1 and 2 (without the optimization) or 1 and 3 (with the optimization) as presented below:
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
-**1. Build the necessary databases from the training set:**
+**Step 1. Build the necessary databases from the training set:**
 
  .. code-block:: bash 
      
@@ -246,7 +246,7 @@ For more information please consult the ``cssscl's``  ``build_dbs`` help page by
       $ cssscl build_dbs --help
 
 
-**2. Perform the classification using the test set without the optimization:**
+**Step 2. Perform the classification using the test set without the optimization:**
 
  .. code-block:: bash 
 
@@ -279,7 +279,7 @@ For more information please consult the ``cssscl's``  ``classify`` help page by 
       $ cssscl classify --help 
 
 
-**3. Perform the classification by optimizing the** ``cssscl's`` **parameter values first:**
+**Step 3. Perform the classification by optimizing the** ``cssscl's`` **parameter values first:**
 
 More information about the optimization can be found `here <https://github.com/oicr-ibc/cssscl/wiki/optimization>`_. 
 
