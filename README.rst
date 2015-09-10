@@ -33,7 +33,7 @@ Tested environments
 
 2. `Quick deployment using a VM (large file ~ 5GB) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-the-Oracle-VirtualBox-VM>`_.
 
-3. System wide installation from the source code (see installation instructions below).
+3. 'System wide installation from the source code (see installation instructions below).<https://github.com/oicr-ibc/cssscl#installation-guide>`_.
 
 
 
