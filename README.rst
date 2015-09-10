@@ -51,7 +51,7 @@ Installation Guide
 ============
 
 
-Option A - Installing  ``cssscl`` using the **Python's Virtual Environment**
+Option A - Installing  ``cssscl`` using the Python's Virtual Environment
 ---------------------------
 
 We recommand to install the ``cssscl`` package using the **Python's Virtual Environment** tool to keep the dependencies required by the ``cssscl`` package in a separate directory and to keep your global python dist- or site-packages directory clean and manageable as shown below:
@@ -80,7 +80,8 @@ We recommand to install the ``cssscl`` package using the **Python's Virtual Envi
      # e.g. PATH_TO_YOUR_plzip=/home/user_x/plzip-1.1/plzip
      $ export PATH=$PATH:PATH_TO_YOUR_plzip
 
-Step 0. Install dependencies on Debian and Ubuntu
+*Step 0*. Install dependencies on Debian and Ubuntu
+
 In order to compile ``cssscl`` on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the following packages need to be installed:
 
 .. code-block:: bash
@@ -88,7 +89,7 @@ In order to compile ``cssscl`` on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the 
      $ sudo apt-get update
      $ sudo apt-get install build-essential g++ libxml2-dev libxslt-dev gfortran libopenblas-dev liblapack-dev
 
-Step 1. Download the ``cssscl`` package
+*Step 1*. Download the ``cssscl`` package
 
   .. code-block:: bash 
    
@@ -99,7 +100,7 @@ Step 1. Download the ``cssscl`` package
      $ git clone git@github.com:oicr-ibc/cssscl.git
 
 
-Step 2. Check that all packages necessary to run the ``cssscl`` are installed and are available by running the ``cssscl_check_pre_installation.sh`` script (only for Ubuntu/Debian distributions). 
+*Step 2*. Check that all packages necessary to run the ``cssscl`` are installed and are available by running the ``cssscl_check_pre_installation.sh`` script (only for Ubuntu/Debian distributions). 
 
   .. code-block:: bash 
     
@@ -108,21 +109,21 @@ Step 2. Check that all packages necessary to run the ``cssscl`` are installed an
 
 **Note:** for more information regarding the ``cssscl_check_pre_installation.sh`` script see `here <https://github.com/oicr-ibc/cssscl/wiki/cssscl_check_pre_installation>`_.
 
-Step 3. In the ``cssscl``  ``directory`` create a virtual environment (e.g. name it ``csssclvenv``)
+*Step 3*. In the ``cssscl``  ``directory`` create a virtual environment (e.g. name it ``csssclvenv``)
 
   .. code-block:: bash 
  
      $ virtualenv csssclvenv
 
 
-Step 4. To begin using the virtual environment, it first needs to be **activated**:
+*Step 4*. To begin using the virtual environment, it first needs to be **activated**:
 
   .. code-block:: bash 
 
      $ source csssclvenv/bin/activate
 
 
-Step 5. Install ``cssscl`` as root 
+*Step 5*. Install ``cssscl`` as root 
 
   .. code-block:: bash 
 
@@ -131,7 +132,7 @@ Step 5. Install ``cssscl`` as root
 **Note:** this will install all the python modules necessary for running the ``cssscl`` package in the ``cssscl/csssclvenv/`` directory. 
 
 
-Step 6. Configure ``cssscl``
+*Step 6*. Configure ``cssscl``
 
  .. code-block:: bash 
 
