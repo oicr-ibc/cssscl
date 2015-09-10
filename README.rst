@@ -205,8 +205,15 @@ In order to compile ``cssscl`` on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the 
      # use wget 
      $ wget --no-check-certificate https://github.com/oicr-ibc/cssscl/archive/master.tar.gz
      $ tar -zxvf master.tar.gz; mv cssscl-master cssscl 
-     # or use git clone  
-     $ git clone git@github.com:oicr-ibc/cssscl.git
+
+  or use git clone, note that ``sudo apt-get install git`` is required for git access
+     
+  ..  code-block:: bash  
+     
+     # use git clone 
+     $ git clone https://github.com/oicr-ibc/cssscl.git
+
+
 
 *Step 3*. Check that all packages necessary to run the ``cssscl`` are installed and are avaialble by running the ``cssscl_check_pre_installation.sh`` script (only for Ubuntu/Debian distributions). 
 	      
@@ -214,6 +221,9 @@ In order to compile ``cssscl`` on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the 
 
      $ cd cssscl
      $ ./cssscl_check_pre_installation.sh
+
+
+**Note:** when prompted follow instructions to export when ``source cssscl/scripts/export.sh`` shows on the screen.
 
 **Note:** for more information regarding the ``cssscl_check_pre_installation.sh`` script please see `here <https://github.com/oicr-ibc/cssscl/wiki/cssscl_check_pre_installation>`_.
 
