@@ -97,7 +97,7 @@ In order to compile ``cssscl`` on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the 
      $ wget --no-check-certificate https://github.com/oicr-ibc/cssscl/archive/master.tar.gz
      $ tar -zxvf master.tar.gz; mv cssscl-master cssscl 
      
-or use git clone, note that ``sudo apt-get install git`` is required for git access
+  or use git clone, note that ``sudo apt-get install git`` is required for git access
      
   ..  code-block:: bash  
      
