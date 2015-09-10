@@ -54,27 +54,29 @@ Installation
 Dependencies on Debian and Ubuntu
 ---------------------------------
 
-**Requirements if you are using the Python's Virtual Environment (see Option A below).**
+**If you are using the Python's Virtual Environment**
 
-In order to compile cssscl on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the following packages need to be installed:
+In order to compile ``cssscl`` on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the following packages need to be installed:
 
 .. code-block:: bash
 
      $ sudo apt-get update
      $ sudo apt-get install build-essential g++ libxml2-dev libxslt-dev gfortran libopenblas-dev liblapack-dev
 
+see `Option A <https://github.com/oicr-ibc/cssscl#install-cssscl-option-a>`_ below
 
-**Requirements if you are not using the Python's Virtual Environment (see Option B below).**
+**If you are not using the Python's Virtual Environment**
 
 Python: Python 2.7.3+ supported. No support for Python 3 at the moment.
 
-In order to compile cssscl on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the following packages need to be installed:
+In order to compile ``cssscl`` on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the following packages need to be installed:
 
 .. code-block:: bash
 
      $ sudo apt-get update
      $ sudo apt-get install build-essential python2.7 python2.7-dev g++ libxml2-dev libxslt-dev gfortran libopenblas-dev liblapack-dev
 
+see `Option B <https://github.com/oicr-ibc/cssscl#install-cssscl-option-b>`_ below
 
 
 Install ``cssscl`` Option A
@@ -375,6 +377,17 @@ In order to complete the installation of the packages, you need to update the so
      $ echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | tee -a /etc/apt/sources.list
      $ apt-get update 
      $ apt-get install mongodb-10gen=2.4.14
+
+
+Uninstall ``cssscl`` 
+---------------------
+
+**Note:** this will only work if you installed cssscl with the cmd 'sudo pip install .' as shown in the Installation section above. 
+          
+ .. code-block:: bash 
+
+     $ cd cssscl/
+     $ ./cssscl_uninstall.sh 
 
 
 ==========
