@@ -116,7 +116,7 @@ In order to compile ``cssscl`` on Debian GNU/Linux 8.1 and Ubuntu 12.04 LTS the 
      $ virtualenv csssclvenv
 
 
-*Step 5*. To begin using the virtual environment, it first needs to be **activated**:
+*Step 5*. To begin using the virtual environment, it first needs to be **activated** as shown below:
 
   .. code-block:: bash 
 
