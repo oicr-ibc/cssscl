@@ -441,7 +441,7 @@ For more information please consult the ``cssscl's``  ``build_dbs`` help page by
       $ cssscl build_dbs --help
 
 
-2. Perform the classification of sequences in the test set 
+2. Perform the classification of the sequences in the test set
 
  .. code-block:: bash 
 
@@ -488,7 +488,7 @@ Example 2 - perform the classification by optimizing the ``cssscl's`` parameter 
 (the whole process should take ~ 37 min using 2 CPUs)
 
 
-2. Perform the classification by optimizing the ``cssscl's`` parameter values first
+2. Perform the classification of the sequences in the test set by optimizing the ``cssscl's`` parameter values first
 
  .. code-block:: bash 
 
