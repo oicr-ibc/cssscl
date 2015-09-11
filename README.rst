@@ -26,7 +26,7 @@ Tested environments
    | Codename: jessie / precise
 
 
-**We have setup tree ways for installing the** ``cssscl`` **package:**
+**We have setup three ways for installing the** ``cssscl`` **package:**
 
 
 1. `Quick deployment using Docker (small file) <https://github.com/oicr-ibc/cssscl/wiki/Quick-deployment-and-testing-using-Docker>`_.
@@ -54,7 +54,7 @@ Installation Guide
 Option A - Installing  ``cssscl`` using the Python's Virtual Environment
 ---------------------------
 
-We recommand to install the ``cssscl`` package using the **Python's Virtual Environment** tool to keep the dependencies required by the ``cssscl`` package in a separate directory and to keep your global python dist- or site-packages directory clean and manageable as shown below:
+We recommend to install the ``cssscl`` package using the **Python's Virtual Environment** tool to keep the dependencies required by the ``cssscl`` package in a separate directory and to keep your global python dist- or site-packages directory clean and manageable as shown below:
 
 **Note:** if any of the following packages: **jellyfish**, **BLAST** or **plzip** are **already installed** on your system make sure that they are in your executable search path (i.e. PATH variable) (as shown in the examples below):
 
