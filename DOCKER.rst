@@ -44,7 +44,7 @@ We have setup a Dockerfile to create an image and a container that runs ubuntu 1
    
       $ docker run -ti cssscl/ubuntucsss /bin/bash       
 
-or if you did not add the docker user run it with the sudo command 
+   or if you did not add the docker user run it with the sudo command 
 
     .. code-block:: bash 
 
@@ -56,7 +56,7 @@ Note: you could setup any number of cpus for the container to use as shown below
     
       $ docker run -ti --cpuset-cpus="0-7" cssscl/ubuntucsss /bin/bash       
 
-or if you did not add the docker user run it with the sudo command 
+   or if you did not add the docker user run it with the sudo command 
 
     .. code-block:: bash 
 
