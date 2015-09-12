@@ -60,7 +60,7 @@ We have setup a Dockerfile to create an image and a container that runs ubuntu 1
 
     .. code-block:: bash 
 
-      $ sudo run -ti --cpuset-cpus="0-7" cssscl/ubuntucsss /bin/bash
+      $ sudo docker run -ti --cpuset-cpus="0-7" cssscl/ubuntucsss /bin/bash
 
    This will run the container with 8 cpus
 
