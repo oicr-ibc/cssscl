@@ -50,7 +50,7 @@ We have setup a Dockerfile to create an image and a container that runs ubuntu 1
 
       $ sudo docker run -ti cssscl/ubuntucsss /bin/bash 
 
-Note: you could setup any number of cpus for the container to use as shown below:
+   Note: you could setup any number of cpus for the container to use as shown below:
 
     .. code-block:: bash 
     
@@ -62,7 +62,7 @@ Note: you could setup any number of cpus for the container to use as shown below
 
       $ sudo run -ti --cpuset-cpus="0-7" cssscl/ubuntucsss /bin/bash
 
-This will run the container with 8 cpus
+   This will run the container with 8 cpus
 
 5. Inside the running container start the mongo database as shown below:
 
