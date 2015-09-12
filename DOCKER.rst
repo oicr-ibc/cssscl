@@ -31,7 +31,7 @@ We have setup a Dockerfile to create an image and a container that runs ubuntu 1
 
       $ docker build -t cssscl/ubuntucsss .
 
-or if you did not add the docker user run it with the sudo command 
+      or if you did not add the docker user run it with the sudo command 
 
     .. code-block:: bash 
 
