@@ -12,12 +12,14 @@ We have setup a Dockerfile to create an image and a container that runs ubuntu 1
 
 **Use docker to run cssscl**
 
-1. If necessary add a docker user
+1. If necessary add user to docker group
 
     .. code-block:: bash 
       
       $ sudo adduser -a [username] docker
       # then Logout
+  
+  otherwise run docker as sudo.
 
 2.  Login and ``cd`` to the ``ubuntucsss`` ``directory``
 
@@ -31,7 +33,7 @@ We have setup a Dockerfile to create an image and a container that runs ubuntu 1
 
       $ docker build -t cssscl/ubuntucsss .
 
-   or if you did not add the docker user run it with the sudo command 
+   or if you did not add user to docker group run it with the sudo command 
 
     .. code-block:: bash 
 
@@ -44,7 +46,7 @@ We have setup a Dockerfile to create an image and a container that runs ubuntu 1
    
       $ docker run -ti cssscl/ubuntucsss /bin/bash       
 
-   or if you did not add the docker user run it with the sudo command 
+   or if you did not add user to docker group run it with the sudo command 
 
     .. code-block:: bash 
 
@@ -56,7 +58,7 @@ We have setup a Dockerfile to create an image and a container that runs ubuntu 1
     
       $ docker run -ti --cpuset-cpus="0-7" cssscl/ubuntucsss /bin/bash       
 
-   or if you did not add the docker user run it with the sudo command 
+   or if you did not add user to docker group run it with the sudo command 
 
     .. code-block:: bash 
 
