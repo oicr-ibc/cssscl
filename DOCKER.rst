@@ -19,7 +19,7 @@ We have setup a Dockerfile to create an image and a container that runs ubuntu 1
       $ sudo adduser -a [username] docker
       # then Logout
   
-  otherwise run docker as sudo.
+   otherwise run docker as sudo.
 
 2.  Login and ``cd`` to the ``ubuntucsss`` ``directory``
 
