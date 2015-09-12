@@ -31,18 +31,37 @@ We have setup a Dockerfile to create an image and a container that runs ubuntu 1
 
       $ docker build -t cssscl/ubuntucsss .
 
+or if you did not add the docker user run it with the sudo command 
+
+    .. code-block:: bash 
+
+      $ sudo docker build -t cssscl/ubuntucsss .
+
+
 4. Now use the docker image cssscl/ubuntucsss to create and run a container:
 
     .. code-block:: bash 
    
       $ docker run -ti cssscl/ubuntucsss /bin/bash       
 
+or if you did not add the docker user run it with the sudo command 
+
+    .. code-block:: bash 
+
+      $ sudo docker run -ti cssscl/ubuntucsss /bin/bash 
+
 Note: you could setup any number of cpus for the container to use as shown below:
 
     .. code-block:: bash 
     
       $ docker run -ti --cpuset-cpus="0-7" cssscl/ubuntucsss /bin/bash       
-    
+
+or if you did not add the docker user run it with the sudo command 
+
+    .. code-block:: bash 
+
+      $ sudo run -ti --cpuset-cpus="0-7" cssscl/ubuntucsss /bin/bash
+
 This will run the container with 8 cpus
 
 5. Inside the running container start the mongo database as shown below:
