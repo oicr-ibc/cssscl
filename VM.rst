@@ -5,7 +5,7 @@ We have setup an OVF-formatted virtual machine (VM) running Ubuntu provisioned w
 **Procedure for setting up the VM**
 
    | 1. Download the .ova file from `here <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/cssscl_opt.ova>`_
-   | 2. In Workstation, select File > Import appliance.
+   | 2. In Workstation, open VirtualBox software, select File > Import appliance.
    | 3. Browse to the .ova file and click Open.
    | 4. Type a name for the virtual machine, type or browse to the directory for the virtual machine files, and click Import. Workstation performs OVF specification conformance and virtual hardware compliance checks. A status bar indicates the progress of the import process.
    | 5. If the import fails, click Retry to try again, or click Cancel to cancel the import.
