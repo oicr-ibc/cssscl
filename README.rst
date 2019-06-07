@@ -23,7 +23,9 @@ Tested environments
    | Distributor ID: Debian/Ubuntu
    | Description: Debian GNU/Linux 8.1 (jessie) / Ubuntu 12.04.3 LTS / Ubuntu 14.04.1 
    | Release: 8.1 64-bit / 12.04 64-bit / 14.04 64-bit
-   | Codename: jessie / precise / trusty 
+   | Codename: jessie / precise / trusty
+   
+   Python = 2.7.9 (biopython==1.67, Cython==0.29.10, numpy==1.9.2, pymongo==2.9.5, pysam==0.15.2, python-dateutil==2.5.3,           scikit-learn==0.17.1, scipy==0.15.1, six==1.12.0)
 
 
 **We have setup three ways for installing the** ``cssscl`` **package:**
