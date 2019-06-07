@@ -24,16 +24,15 @@ set -o pipefail  # Stop on failures in non-final pipeline commands
 
 pwd=$PWD
 #echo $pwd
-
-#echo "Donwloading jellyfish from http://www.cbcb.umd.edu/software/jellyfish/jellyfish-1.1.11.tar.gz"
-echo "Donwloading jellyfish from https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/source/jellyfish-1.1.11.tar.gz"
+#echo "Donwloading jellyfish from https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/source/jellyfish-1.1.11.tar.gz"
+echo "Donwloading jellyfish from https://github.com/gmarcais/Jellyfish/releases/download/v1.1.12/jellyfish-1.1.12.tar.gz"
 suffix='scripts'
 install_dir=${pwd%$suffix}
 mkdir -p $install_dir/src
-#wget --no-check-certificate -P /tmp/ http://www.cbcb.umd.edu/software/jellyfish/jellyfish-1.1.11.tar.gz
-wget --no-check-certificate -P /tmp/ https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/source/jellyfish-1.1.11.tar.gz
-tar -xzf /tmp/jellyfish-1.1.11.tar.gz -C $install_dir/src
-cd $install_dir/src/jellyfish-1.1.11
+wget --no-check-certificate -P /tmp/ https://github.com/gmarcais/Jellyfish/releases/download/v1.1.12/jellyfish-1.1.12.tar.gz
+#wget --no-check-certificate -P /tmp/ https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/source/jellyfish-1.1.11.tar.gz
+tar -xzf /tmp/jellyfish-1.1.12.tar.gz -C $install_dir/src
+cd $install_dir/src/jellyfish-1.1.12
 ./configure --prefix=$install_dir/src
 make
 make install
