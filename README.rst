@@ -72,7 +72,7 @@ We recommend to install the ``cssscl`` package using the **Python's Virtual Envi
 
 .. code-block:: bash
 
-     # e.g. PATH_TO_YOUR_jellyfish=/home/user_x/jellyfish-1.1.10/bin
+     # e.g. PATH_TO_YOUR_jellyfish=/home/user_x/jellyfish-1.1.12/bin
      $ export PATH=$PATH:PATH_TO_YOUR_jellyfish 
  
 *plzip*
@@ -179,7 +179,7 @@ Install the ``cssscl`` package directly to your python global dist- or site-pack
 
 .. code-block:: bash
 
-     # e.g. PATH_TO_YOUR_jellyfish=/home/user_x/jellyfish-1.1.10/bin
+     # e.g. PATH_TO_YOUR_jellyfish=/home/user_x/jellyfish-1.1.12/bin
      $ export PATH=$PATH:PATH_TO_YOUR_jellyfish 
  
 *plzip*
@@ -273,12 +273,12 @@ Necessary Python modules:
 
  .. code-block:: bash 
 
-     $ pip install cython
-     $ pip install numpy
-     $ pip install pymongo==2.8
-     $ pip install biopython
-     $ pip install scikit-learn
-     $ pip install scipy    
+     $ pip install cython==0.29.10
+     $ pip install numpy==1.9.2
+     $ pip install pymongo==2.9.5
+     $ pip install biopython==1.67
+     $ pip install scikit-learn==0.17.1
+     $ pip install scipy==0.15.1 
 
 **Third party software:**
 
@@ -346,7 +346,7 @@ http://www.nongnu.org/lzip/manual/plzip_manual.html#Memory-requirements
 
      # for example 
      $ export PATH=$PATH:PATH_TO_BLAST/blast/ncbi-blast-2.2.30+/bin
-     $ export PATH=$PATH:PATH_TO_jellyfish/jellyfish-1.1.10/bin
+     $ export PATH=$PATH:PATH_TO_jellyfish/jellyfish-1.1.12/bin
      $ export PATH=$PATH:PATH_TO_plzip/plzip-1.1/plzip
    
 
@@ -354,7 +354,7 @@ http://www.nongnu.org/lzip/manual/plzip_manual.html#Memory-requirements
 
 MongoDB should be installed using the following set of instructions:
 
-*Ubuntu*
+*Ubuntu 12.04.3 LTS /14.04.1*
 
 First add the 10gen GPG key, the public gpg key used for signing these packages. It should be possible to import the key into apt's public keyring with a command like this:
 
@@ -375,6 +375,18 @@ In order to complete the installation of the packages, you need to update the so
      $ sudo apt-get update 
      $ sudo apt-get install mongodb-10gen=2.4.14
 
+*Ubuntu 19.04*
+
+.. code-block:: bash 
+
+	$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
+	$ echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+	$ sudo apt update
+	$ sudo apt-get install -y mongodb-org
+
+Start mongo service 
+
+	$ sudo service mongod start
 
 *Debian*
 
