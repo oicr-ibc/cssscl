@@ -25,14 +25,14 @@ set -o pipefail  # Stop on failures in non-final pipeline commands
 pwd=$PWD
 #echo $pwd
 
-#echo "Downloading BLAST from ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.2.30/ncbi-blast-2.2.30+-x64-linux.tar.gz"
-echo "Downloading BLAST from https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/source/ncbi-blast-2.2.30+-x64-linux.tar.gz"
+echo "Downloading BLAST from ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.2.30/ncbi-blast-2.2.30+-x64-linux.tar.gz"
+#echo "Downloading BLAST from https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/source/ncbi-blast-2.2.30+-x64-linux.tar.gz"
 suffix='scripts'
 install_dir=${pwd%$suffix}
 #echo $install_dir/bin/
 mkdir -p $install_dir/src/bin
-#wget --no-check-certificate -P /tmp/ ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.2.30/ncbi-blast-2.2.30+-x64-linux.tar.gz
-wget --no-check-certificate -P /tmp/ https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/source/ncbi-blast-2.2.30+-x64-linux.tar.gz
+wget --no-check-certificate -P /tmp/ ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.2.30/ncbi-blast-2.2.30+-x64-linux.tar.gz
+#wget --no-check-certificate -P /tmp/ https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/source/ncbi-blast-2.2.30+-x64-linux.tar.gz
 tar -xzf /tmp/ncbi-blast-2.2.30+-x64-linux.tar.gz -C $install_dir/src
 #mkdir -p $HOME/bin/
 #cp $install_dir/src/ncbi-blast-2.2.30+/bin/* $HOME/bin/
