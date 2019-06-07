@@ -21,7 +21,7 @@ Tested environments
 
 
    | Distributor ID: Debian/Ubuntu
-   | Description: Debian GNU/Linux 8.1 (jessie) / Ubuntu 12.04.3 LTS / Ubuntu 14.04.1 
+   | Description: Debian GNU/Linux 8.1 (jessie) / Ubuntu /12.04.3 LTS /14.04.1/19.04 
    | Release: 8.1 64-bit / 12.04 64-bit / 14.04 64-bit
    | Codename: jessie / precise / trusty
    
