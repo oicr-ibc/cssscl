@@ -473,7 +473,7 @@ For more information please consult the ``cssscl's``  ``build_dbs`` help page by
 
 Note that in the above example the output file ``cssscl_results_genus.txt`` with classification results will be located in the directory where the TEST.fa resides. 
 
-**Note**: For the `test set data <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/test_data.tar.gz>`_ provided above the values of the parameters used in the model have already been optimized and are included as part of the test set (see the ``optimum_kmer`` directory in the ``test_set/`` directory provided). Thus for the test dataset the optimization is not required to be performed prior to running the classifier. On how to run the classifier by performing the optimization stage first please see the step 3 below. 
+**Note**: For the test set data provided above the values of the parameters used in the model have already been optimized and are included as part of the test set (see the ``optimum_kmer`` directory in the ``test_set/`` directory provided). Thus for the test dataset the optimization is not required to be performed prior to running the classifier. On how to run the classifier by performing the optimization stage first please see the step 3 below. 
 
 The ``cssscl's``  ``classify`` module requires two positional arguments to be provided: 
 
@@ -530,30 +530,6 @@ The use of the compression measure will slow down considerably the optimization 
 time complexity ~ O(n*n) (for the optimization phase) and  ~ O(n*m) for the classification phase, where n and m are respectively 
 the number of sequences in the training and test sets. Thus the compression measure should only be used with smaller genome 
 databases (e.g. viruses) and/or with smaller datasets (i.e. smaller number of reads/contigs to classify).
-
-
-
-==================
-Supplementary data
-==================
-
-1. **Accompanying supplementary file** to the Bioinformatics 2015 paper "*CSSSCL: a python package that uses Combined Sequence Similarity Scores for accurate taxonomic CLassification of long and short sequence reads. Bioinformatics 2015*" can be found `here <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/supplementary_data.pdf>`_.
-
-2. **Test data:**
-
-      Genome sequences: `test data <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/test_data.tar.gz>`_
-
-      Taxon Data: `taxon <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/taxon.tar.gz>`_
-
-
-3. **Links to the three full datasets used to generate the results presented in Table 1 on pg.2 of the manuscript are shown below:**
-
-      `Viral <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/viral/train_test_viral_full_data.tar.gz>`_ - Viral sequences (full dataset) used in the paper.
-
-      `Bacterial I <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/bacterial1/bacterial1.tar.gz>`_ - dataset I Bacterial sequences (full dataset) used in the paper.
-
-      `Bacterial II <https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/bacterial2/bacterial2.tar.gz>`_ - dataset II Bacterial sequences (full dataset) used in the paper. 
-
 
 
 =====================
