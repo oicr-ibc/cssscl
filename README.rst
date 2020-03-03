@@ -418,9 +418,10 @@ Download taxon and test data
 
 Download taxon data:
 
- .. code-block:: bash 
+ https://drive.google.com/open?id=1glzuBJAqf5MPuO5_ivaFFLnZxpjnamFc
 
-     $ wget --no-check-certificate https://collaborators.oicr.on.ca/vferretti/borozan_cssscl/data/taxon.tar.gz
+ .. code-block:: bash 
+ 
      $ tar -zxvf taxon.tar.gz
     
 
