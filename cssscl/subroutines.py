@@ -178,10 +178,10 @@ def f_stat(X,Y):
         between_group = between_group + mu_diff
         within_class = array([(s - mu_group)**2 for s in list(X[Y==c])])
         within_group = within_group + np.sum(within_class)
-        if within_group == 0.0:
-            f = 0.0
-        else:
-            f = (between_group/(len(classes) - 1))/(within_group/(n - len(classes))) 
+    if within_group == 0.0:
+        f = 0.0
+    else:
+        f = (between_group/(len(classes) - 1))/(within_group/(n - len(classes))) 
     return f
 
 
